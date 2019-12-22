@@ -1,0 +1,71 @@
+@import "bootstrap";
+@import "./reset";
+.row{
+  margin: 0;
+}
+
+html{
+  background: #F4F8F9;
+}
+.header {
+  height: 63px;
+  background: #fff;
+  h2{
+    line-height: 63px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #50B0BF;
+    margin: 0;
+  }
+  ul{
+    line-height: 63px;
+    display: inline-block;
+    .btn{
+      border:2px solid #13b1c0;
+      border-radius: 30px;
+      color: #13b1c0;
+      padding: 5px 20px;
+    }
+    .registration{
+      background: #13b1c0;
+      color: #fff;
+    }
+  }
+}
+.container-fluid{
+  background: #F4F8F9;
+}
+.search-side{
+  background: #fff;
+  padding:20px 0;
+  &_child{
+    &:not(:first-child){
+      padding-top: 20px;
+    }
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+    .input{
+      border-radius: 50px;
+      background: #F4F8F9;
+      height: 37px;
+      width: 248px;
+    }
+    &_select{
+      height: 40px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    select::-ms-expand {
+      display: none;
+    }
+  }
+  
+}
