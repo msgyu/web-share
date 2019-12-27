@@ -19,6 +19,9 @@ html{
   TODO test putting a class on HEAD.
       - Fails on FF.
 */
+*{
+  box-sizing: border-box;
+}
 body,
 div,
 dl,
@@ -127,4 +130,12 @@ legend {
 a{
   text-decoration: none;
   color: inherit;
+  &:hover{
+    text-decoration: none;
+    color: initial;
+    opacity: 0.7;
+  }
+}
+input{
+  outline: 0;
 }
