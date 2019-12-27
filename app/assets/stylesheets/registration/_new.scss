@@ -1,0 +1,48 @@
+.registration-container{
+  width: 665px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 80px;
+  text-align: center;
+  color: #878787;
+  font-size: 15px;
+  h1{
+    text-align: center;
+    color: $green;
+    font-size: 35px;
+    height: 60px;
+    line-height: 60px;
+  }
+  p{
+    color: #878787;
+    margin-bottom: 10px;
+    
+  }
+  .input,.sns{
+    @include input;
+    border-radius: 5px;
+    width: 300px;
+    height: 55px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  .sns{
+    margin: 0 auto 10px;
+    color: #fff;
+    line-height: 15px;
+    &.facebook{
+      background: #4267B2;
+    }
+    &.twitter{
+      background: #3AA1F2;
+    }
+  }
+  .btn{
+    @include btn;
+    padding: 15px 50px;
+    font-size: 20px;
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+}
