@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "./reset";
+@import "./color";
 @import "./mixin/top-page_mixins";
+@import "./registration/new.scss";
 .row{
   margin: 0;
 }
@@ -16,7 +18,7 @@ html{
     font-size: 25px;
     font-weight: bold;
     margin-left: 10px;
-    color: red;
+    color: #13b1c0;
     margin: 0;
   }
   .search_wap{
