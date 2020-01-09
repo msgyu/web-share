@@ -4,21 +4,24 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, index: true|
+|nickname|string|null: false|
 |email|string|unique: true, null: false|
-|phone_number|string|unique: true|
-|password|string|null: false|
-|avatar|string||
-|prefecture_id|integer||
-|postalcode|integer||
-|prefecture_id|integer||
-|city_name|string||
-|address_number|string||
-|building_name|string||
-|gender|string||
+|firstname|string|null: false|
+|lastname|string|null: false|
+|firstname_kana|string|null: false|
+|lastname_kana|string|null: false|
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
+|phone_number|string|unique: true, null: false|
+|password|string|null: false|
+|postalcode|integer||
+|prefecture_id|integer||
+|city_name|string||
+|address_number|st  ring||
+|building_name|string||
+|gender|string||
+|avatar|string||
 |profile|text||
 |performance|text||
 
