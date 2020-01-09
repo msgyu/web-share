@@ -2,7 +2,7 @@
   .search-side_child
     %p 条件で絞り込む
     .search_wap
-      %input.input
+      %input.input{placeholder:"キーワード"}
       %i.fas.fa-search
   .search-side_child
     %p 並び順
@@ -26,6 +26,17 @@
       %option Youtube
       %option Twitter
       %option instagram
+  .search-side_child
+    %p フォロワー数
+    %select.search-side_child_select.col-10
+      %option 
+      %option ~1000人
+      %option ~5000人
+      %option ~10000人
+      %option ~50000人
+      %option ~10万人
+      %option ~50万人
+      %option ~100万人
   .search-side_child
     %p 料金
     %select.search-side_child_select.col-10
