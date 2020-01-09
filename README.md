@@ -121,8 +121,6 @@ belongs_to :user
 |price|integer|null: false|
 |host_id|references|foreign_key: { to_table: :users }|
 |client_id|references|foreign_key: { to_table: :users }|
-|category_id|references|foreign_key: true|
-|tag_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :seller, class_name: "User"
