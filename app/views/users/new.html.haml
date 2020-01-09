@@ -1,0 +1,16 @@
+= render 'shared/main-header'
+.container-fluid
+  .row.py-5.w-100
+    .col-8.registration-container
+      %h1 新規登録
+      %p メールアドレスで登録
+      %input.input{placeholder:"Email"}
+      %p 利用規約とプライバシーポリシーを御覧ください。
+      %li.btn.active
+        = link_to "登録する",""
+      %p SNSアカウントで登録
+      %p.sns.facebook
+        facebookで登録
+      %p.sns.twitter
+        Twitterで登録
+      = link_to "アカウントをお持ちの場合はこちら",""
