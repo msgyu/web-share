@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: web-share_production
-  username: web-share
-  password: <%= ENV['WEB-SHARE_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
