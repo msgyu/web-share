@@ -4,6 +4,7 @@ lock '3.11.1'
 
 # Capistranoのログの表示に利用する
 set :application, 'web-share'
+set :deploy_to, '/var/app/web-share'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:nousi/web-share.git'
