@@ -16,9 +16,8 @@
   p{
     color: #878787;
     margin-bottom: 10px;
-    
   }
-  .input,.sns{
+  .input,.sns,.registrateion{
     @include input;
     border-radius: 5px;
     width: 300px;
@@ -30,6 +29,10 @@
     margin: 0 auto 10px;
     color: #fff;
     line-height: 15px;
+    display: block;
+    &.mail{
+      background:#13b1c0
+    }
     &.facebook{
       background: #4267B2;
     }
