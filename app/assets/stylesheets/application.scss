@@ -2,6 +2,7 @@
 @import "./reset";
 @import "./color";
 @import "./mixin/top-page_mixins";
+@import "./share/header.scss";
 @import "./registration/new.scss";
 .row{
   margin: 0;
@@ -13,18 +14,7 @@ html{
 .header {
   height: 63px;
   background: #fff;
-  h2{
-    line-height: 63px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #13b1c0;
-    margin: 0;
-  }
-  .search_wap{
-    @include search_wap;
     float: right;
-  }
   ul{
     line-height: 63px;
     display: inline-block;
@@ -35,6 +25,18 @@ html{
       background: #13b1c0;
       color: #fff;
     }
+  }
+  .search_wap{
+    @include search_wap;
+    float: right;
+  }
+  .logo{
+    line-height: 63px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #13b1c0;
+    margin: 0;
   }
 }
 .container-fluid{
