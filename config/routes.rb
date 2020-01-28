@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
- root 'users#index'
- resources :users, only: [:new, :create]
+  root 'users#index'
+  resources :users, only: [:new, :create] do
+    collection do
+      get :registration
+    end
+  end
 end
