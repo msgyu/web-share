@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :registration
+      get :contents
     end
   end
+  resources :products
 end
