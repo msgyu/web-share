@@ -31,16 +31,16 @@
 ### Association
 - has_many :youtuber
 - has_many :websites
-- has_many :contents
-- has_many :bought_contents, class_name: "content", foreign_key: "buyer_id"
-- has_many :selling_contents, -> { where("buyer_id is NULL") }, class_name: "Content", foreign_key: "seller_id"
-- has_many :sold_contents, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "content"
+- has_many :products
+- has_many :bought_products, class_name: "product", foreign_key: "buyer_id"
+- has_many :selling_products, -> { where("buyer_id is NULL") }, class_name: "product", foreign_key: "seller_id"
+- has_many :sold_products, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "product"
 - has_many :comments
 - has_many :trade_messages
 - has_many :evaluations
 - has_many :evaluated_users, foreign_key: "evaluated_id", class_name: "Evaluation"
 - has_many :likes
-- has_many :liked_contents, through: :likes, source: :content
+- has_many :liked_products, through: :likes, source: :product
 - has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
 - has_many :followings, through: :following_relationships
 - has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
@@ -57,7 +57,7 @@
 |registration|string|-------|
 
 ## Association
-has_many :contents
+has_many :products
 belongs_to :user
 
 ## websites
@@ -66,7 +66,7 @@ belongs_to :user
 |url|string|-------|
 
 ## Association
-has_many :contents
+has_many :products
 belongs_to :user
 
 
@@ -105,13 +105,13 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
-|content_id|references|foreign_key: true|
+|product_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
 
 
-## contentsテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -141,10 +141,10 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|content_id|references|foreign_key: true, null: false|
+|product_id|references|foreign_key: true, null: false|
 
 ### Association
-- belongs_to :content
+- belongs_to :product
 
 
 ## categoriesテーブル
@@ -154,32 +154,32 @@ belongs_to :user
 |ancestry|string|index: true|
 
 ### Association
-- has_many :contents
+- has_many :products
 - has_ancestry
 
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content_id|references|foreign_key: true, null: false|
+|product_id|references|foreign_key: true, null: false|
 |user_id|references|foreign_key: true, null: false|
 |comment|text|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :content
+- belongs_to :product
 
 
 ## trade_messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content_id|references|foreign_key: true, null: false|
+|product_id|references|foreign_key: true, null: false|
 |user_id|references|foreign_key: true, null: false|
 |message|text|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :content
+- belongs_to :product
 
 
 ## evaluationsテーブル
@@ -188,12 +188,12 @@ belongs_to :user
 |rate|integer|null: false|
 |evaluate_id|integer|foreign_key: true, null: false|
 |evaluated_id|intefer|foreign_key: true, null: false|
-|content_id|integer|foreign_key: true|
+|product_id|integer|foreign_key: true|
 |review|text||
 
 ### Association
 - belongs_to :user
-- belongs_to ;content
+- belongs_to ;product
 - belongs_to :evaluate_id, class_name: "User"
 - belongs_to :evaluated_id, class_name: "User"
 
