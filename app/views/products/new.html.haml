@@ -2,6 +2,8 @@
 .container-fluid
   .new-product
     .col-8.main
+      .head
+        %h2 プランの情報を入力
       = form_with model: @product, class:"form" do |f|
         .form-container
           .form-container__name
