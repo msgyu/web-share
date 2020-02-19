@@ -2,7 +2,10 @@
 @import "./reset";
 @import "./color";
 @import "./mixin/top-page_mixins";
-@import "./registration/new.scss";
+@import "./mixin/registration_mixins";
+@import "./share/header";
+@import "./registration/new";
+@import "./registration/registration";
 .row{
   margin: 0;
 }
@@ -10,33 +13,7 @@
 html{
   background: #F4F8F9;
 }
-.header {
-  height: 63px;
-  background: #fff;
-  h2{
-    line-height: 63px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #13b1c0;
-    margin: 0;
-  }
-  .search_wap{
-    @include search_wap;
-    float: right;
-  }
-  ul{
-    line-height: 63px;
-    display: inline-block;
-    .btn{
-      @include btn
-    }
-    .registration{
-      background: #13b1c0;
-      color: #fff;
-    }
-  }
-}
+
 .container-fluid{
   background: #F4F8F9;
 }

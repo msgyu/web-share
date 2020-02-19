@@ -1,0 +1,29 @@
+.header {
+  height: 63px;
+  background: #fff;
+  .btn{
+    @include btn
+  }
+  .registration{
+    background: #13b1c0;
+    color: #fff;
+  }
+  ul{
+    line-height: 63px;
+    li{
+      display: inline-block;
+    }
+  }
+  .search_wap{
+    @include search_wap;
+    float: right;
+  }
+  .logo{
+    line-height: 63px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #13b1c0;
+    margin: 0;
+  }
+}

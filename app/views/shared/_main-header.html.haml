@@ -1,10 +1,17 @@
 .header.clearfix.px-5.mx-3
   %ul.float-right
-    %li.btn.login 
-      = link_to "ログイン",""
-    %li.btn.registration 
-      = link_to "新規登録",""
+    - if user_signed_in?
+      %li 
+        = link_to "マイページ", user_path(current_user.id), class:"btn login"
+      %li 
+        = link_to "ログアウト", destroy_user_session_path, class:"btn login"
+      
+    - else
+      %li 
+        = link_to "ログイン", new_user_session_path, class:"btn login"
+      %li
+        = link_to "新規登録", registration_users_path, class:"btn registration"
   .search_wap
     %input.input{placeholder:"キーワード"}
     %i.fas.fa-search
-  %h2 WEBSHARE
+  = link_to "WEBSHARE", root_path, class:"logo"
