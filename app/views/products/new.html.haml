@@ -38,19 +38,5 @@
               .form-price__form-box__profit__left 販売利益
               .form-price__form-box__profit__right -
         .form-submit
-          .form-submit__description
-            %p
-              = link_to "禁止されている出品", "", class: "description-link"
-              、
-              = link_to "行為", "", class: "description-link" 
-              を必ずご確認ください。
-            %p
-              またブランド品でシリアルナンバー等がある場合はご記載ください。
-              = link_to "偽ブランドの販売", "", class: "description-link"
-              は犯罪であり処罰される可能性があります。
-            %p
-              また、出品をもちまして
-              = link_to "加盟店規約", "", class: "description-link"
-              に同意したことになります。
           = f.submit "出品する", class: "btn-default"
           = link_to "もどる", :back, class: "btn-default btn-gray"
