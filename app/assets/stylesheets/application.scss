@@ -3,10 +3,12 @@
 @import "./color";
 @import "./mixin/top-page_mixins";
 @import "./mixin/registration_mixins";
+@import "./mixin/products_mixins";
 @import "./share/header";
 @import "./registration/new";
 @import "./registration/registration";
 @import "./users/show";
+@import "./products/new";
 .row{
   margin: 0;
 }
