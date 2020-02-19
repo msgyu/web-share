@@ -87,7 +87,7 @@ gem 'devise', '~> 4.7.1'
 gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 #パンくずリスト
