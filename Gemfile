@@ -82,6 +82,8 @@ gem 'fog-aws'
 gem 'nokogiri', '>= 1.10.4'
 gem 'rubyzip', '>= 1.3.0'
 gem 'devise', '~> 4.7.1'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 #ビュー関係
 gem "font-awesome-rails"
