@@ -7,11 +7,11 @@
       = form_with model: @product, class:"form" do |f|
         .form-container
           .form-container__name
-            %label 商品名
+            %label タイトル
             %span 必須
             .input-space
               = f.text_field :name, class: "input-name", placeholder: "商品名（必須 40文字まで）"
           .form-container__description
-            %label 商品の説明
+            %label 説明
             %span 必須
-            = f.text_area :description, class: "input-description", rows: "5", cols: 40, placeholder: "商品説明を記載（必須1000文字以内）"
+            = f.text_area :description, class: "input-description", rows: "5", cols: 40, placeholder: "プランの説明を記載（必須1000文字以内）"
