@@ -1,3 +1,26 @@
 .list-group{
   width: 250px;
+  &-item{
+    &.active{
+      background: #EEEEEE;
+      font-weight: bold;
+      border-color: #3333;
+      color: #212529;
+      &::after{
+        border-top: 2px solid #333333;
+        border-right: 2px solid #333333;
+      }
+      .nav-list{
+        &__link{
+          text-decoration: none;
+          font-weight: bold;
+          color: #333333;
+          font-size: 14px;
+        }
+      }
+      &:hover{
+        background: #EEEEEE;
+      }
+    }
+  }
 }
