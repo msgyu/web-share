@@ -21,18 +21,26 @@ class CreditcardsController < ApplicationController
         metadata: {user_id: current_user.id}
       )
       @card = Creditcard.new(user_id: current_user.id, customer_id: customer.id)
-        if @card.save
-          if request.referer&.include?("/registrations/step5")
-            redirect_to controller: 'registrations', action: "step6"
-          else
-            redirect_to action: "index", notice:"支払い情報の登録が完了しました"
-          end
+      if @card.save
+        if request.referer&.include?("/registrations/step5")
+          redirect_to controller: 'registrations', action: "step6"
         else
-          render 'new'
+          redirect_to action: "index", notice:"支払い情報の登録が完了しました"
         end
+      else
+        render 'new'
+      end
     end
   end
 
-  def destroy
+  def destroy     
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    customer.delete
+    if @card.destroy
+      redirect_to action: "index", notice: "削除しました"
+    else
+      redirect_to action: "index", alert: "削除できませんでした"
+    end
   end
 end
