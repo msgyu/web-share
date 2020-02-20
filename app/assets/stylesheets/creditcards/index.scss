@@ -12,49 +12,46 @@
   .single-container{
     padding: 64px;
     min-height: 319px;
+    width: 500px;
+    margin: 0 auto;
     .creditcard_section{
       border-bottom: 1px solid #eee;
-      .container{
-        width: 320px;
-        margin: 0 auto;
-        h3{
-          font-size: 16px;
-          font-weight: bold;
-          margin: 0 auto;
+      h3{
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .creditcard-info{
+        padding: 24px 0;
+        font-size: 16px;
+        position: relative;
+        &__number{
+          margin: 8px 0 0 0;
         }
-        .creditcard-info{
-          padding: 24px 0;
-          font-size: 16px;
-          position: relative;
-          &__number{
-            margin: 8px 0 0 0;
-          }
-          &__period{
-            margin: 8px 0 0 0;
-          }
-          &__delete{
-            position: absolute;
-            right: 0;
-            top: 24px;
-            display: block;
-            color: $red;
-            background: #fff;
-            border: 1px solid $red;
-            border-radius: 2px;
-            font-size: 14px;
-            line-height: 14px;
-            width: 70px;
-            height: 24px;
-            padding: 4px 6px;
-            cursor: pointer;
-            outline: none;
-          }
+        &__period{
+          margin: 8px 0 0 0;
+        }
+        &__delete{
+          position: absolute;
+          right: 0;
+          top: 24px;
+          display: block;
+          color: $red;
+          background: #fff;
+          border: 1px solid $red;
+          border-radius: 2px;
+          font-size: 14px;
+          line-height: 14px;
+          width: 70px;
+          height: 24px;
+          padding: 4px 6px;
+          cursor: pointer;
+          outline: none;
         }
       }
     }
     .new-card{
       min-width: 320px;
-      margin: 0 0 0 128px;
       padding: 24px 0;
       &-btn{
         width: 500px;
