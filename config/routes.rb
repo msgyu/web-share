@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       get :contents
     end
   end
+  resources :creditcards, except: :show
   resources :products
 end
