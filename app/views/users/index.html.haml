@@ -5,4 +5,4 @@
     .col-8.main
       %h2.main-h2 コラボ相手を探す
       %p 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！
-      = render 'user'
+      = render partial: 'user', collection: @products, as: "product"
