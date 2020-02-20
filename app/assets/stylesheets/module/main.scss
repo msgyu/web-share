@@ -1,0 +1,73 @@
+.main{
+  &-h2{
+    font-size: 30px;
+    color: $green;
+    margin-bottom: 50px;
+  }
+  .user{
+    margin-top: 20px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    min-height: 180px;
+    -webkit-box-shadow: #E8E8E8 0 4px 0;
+    .row{
+      min-height: 150px;
+    }
+    &_icon{
+      padding: 0;
+      width: 100px;
+      height: 100px;
+      float: left;
+      img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    &_info{
+      padding: 0 0 0 15px;
+      &_name{
+        color: #13b1c0;
+        font-weight: bold;
+      }
+      &_title{
+        color: #4F5050;
+        font-size: 17px;
+        font-weight: 700;
+        margin: 10px 0;
+        
+      }
+      &_score{
+        font-size: 13px;
+        color:#333;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+    &_btn{
+      width: 170px;
+      float: left;
+      padding: 0;
+      .btn{
+        @include btn;
+        height: 30px;
+        font-size: 11px;
+        font-weight: bold;
+        padding:0 25px 10px 40px;
+        line-height: 25px;
+        position: relative;
+        &:first-child{
+          margin-bottom: 10px;
+        }
+        i{
+          font-size: 11px;
+          position: absolute;
+          top: 6px;
+          left: 24px;
+        }
+      }
+
+    }
+  }
+}

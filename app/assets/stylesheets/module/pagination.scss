@@ -1,0 +1,13 @@
+.pagination{
+  .page-item{
+    .page-link{
+      color: $green;
+    }
+    &.active{
+      .page-lilnk{
+        background-color: $green;
+        color: #ffff;
+      }
+    }
+  }
+}

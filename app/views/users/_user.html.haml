@@ -4,35 +4,13 @@
       = image_tag "member_photo_noimage_thumb.png"
     .user_info.col-8
       .user_info_name
-        ゲーミーチャンネル
+        = product.host.nickname
       .user_info_title
-        ゲーム系Youruberと動画コラボをしませんか？
+        = product.name
       .user_info_score
         = "評価 ★★★★"
       .user_info_score
-        = "料金 5,000円〜"
-
-    .user_btn.col-2
-      = link_to "", class: "btn" do
-        %i.far.fa-user
-        %p フォローする
-
-      = link_to "", class: "btn active" do
-        %i.far.fa-comments
-        %p 相談してみる
-.user
-  .row
-    .user_icon.col-2
-      = image_tag "member_photo_noimage_thumb.png"
-    .user_info.col-8
-      .user_info_name
-        ゲーミーチャンネル
-      .user_info_title
-        ゲーム系Youruberと動画コラボをしませんか？
-      .user_info_score
-        = "評価 ★★★★"
-      .user_info_score
-        = "料金 5,000円〜"
+        = "#{product.price}円"
 
     .user_btn.col-2
       = link_to "", class: "btn" do
