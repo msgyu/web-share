@@ -3,6 +3,8 @@
   .row.py-5.w-100
     = render 'shared/side'
     .col-8.main
-      %h2 コラボ相手を探す
+      %h2.main-h2 コラボ相手を探す
       %p 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！
-      = render 'user'
+      = render partial: 'user', collection: @products, as: "product"
+      = link_to_prev_page @products, '前のページ'
+      = link_to_next_page @products, '次のページ' 
