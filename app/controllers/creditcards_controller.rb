@@ -1,5 +1,6 @@
 class CreditcardsController < ApplicationController
   require "payjp"
+  before_action :set_card
 
   def index
   end
@@ -42,5 +43,10 @@ class CreditcardsController < ApplicationController
     else
       redirect_to action: "index", alert: "削除できませんでした"
     end
+  end
+
+  private
+  def set_card
+    @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
   end
 end
