@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @products = Product.all.order(created_at: "DESC")
+    @products = Product.all.order(created_at: "DESC").includes(:host)
   end
 
   def new
