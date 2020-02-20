@@ -11,7 +11,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new
+    @product = Product.new(product_params)
+    binding.pry
+    if @product.save
+      redirect_to user_path(current_user.id), notice:"投稿完了"
+    else
+      render "new"
+    end
   end
 
   private
