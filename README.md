@@ -32,8 +32,8 @@
 - has_many :youtuber
 - has_many :websites
 - has_many :products
-- has_many :bought_products, class_name: "product", foreign_key: "buyer_id"
-- has_many :selling_products, -> { where("buyer_id is NULL") }, class_name: "product", foreign_key: "seller_id"
+- has_many :bought_products, class_name: "product", foreign_key: "client_id"
+- has_many :selling_products, -> { where("client_id is NULL") }, class_name: "product", foreign_key: "seller_id"
 - has_many :sold_products, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "product"
 - has_many :comments
 - has_many :trade_messages
