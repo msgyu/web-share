@@ -14,7 +14,7 @@
     @include input;
     margin: 13px 0 0;
   }
-  button{
+  .search__button{
     background-color: transparent;
     cursor: pointer;
     position: absolute;
@@ -25,7 +25,7 @@
     border-style: none;
     border-radius: 0px 4px 4px 0px;
     padding: 0px;
-    .icon_wap
+    .icon_wap{
       i{
         position: absolute;
         right: 14px;
@@ -34,14 +34,7 @@
         font-weight: 900;
         color: #999999;
       }
-  }
-  i{
-    font-size: 13px;
-    font-weight: 900;
-    color: #999999;
-    position: absolute;
-    top: 50%;
-    right: 15px;
+    }
   }
 }
 
