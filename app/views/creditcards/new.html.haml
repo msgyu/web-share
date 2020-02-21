@@ -1,2 +1,13 @@
-%h1 Creditcards#new
-%p Find me in app/views/creditcards/new.html.haml
+= render 'shared/main-header'
+.container-fluid
+  .row.py-5.w-100
+    = render 'shared/mypage-side'
+    .mypage-main.col-9
+      %h2.header_title
+        支払い方法
+      .single-container
+        .rgs-main__section
+          = render "shared/creditcard-form"
+        .payment-explain
+          = fa_icon 'chevron-right', class:"arrows"
+          = link_to '支払い方法について', '#'
