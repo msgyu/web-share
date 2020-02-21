@@ -1,0 +1,29 @@
+= render 'shared/main-header'
+.container-fluid
+  .row.py-5.w-100
+    = render 'shared/side'
+    .col-8.main
+      %h2.main-h2 コラボ相手を探す
+      - if params[:q]['name_cont'] == ""
+        = "検索キーワードがありません。"
+        %h2.main-h2.new 新着一覧
+        .jscroll
+          = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @products, '前のページ', class: "prev"
+            = link_to_next_page @products, '次のページ', class: "next"
+      - elsif @search_products.present?
+        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人のクリエイターがみつかりました。コラボを依頼しよう！"
+        .jscroll
+          = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @search_products, '前のページ', class: "prev"
+            = link_to_next_page @search_products, '次のページ', class: "next"
+      - else
+        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人。クリエイターがみつからない時は募集してみよう！"
+        %h2.main-h2.new 新着一覧
+        .jscroll
+          = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @products, '前のページ', class: "prev"
+            = link_to_next_page @products, '次のページ', class: "next"
