@@ -6,16 +6,16 @@
       %h2.main-h2 コラボ相手を探す
       - if @search_products.count != 0 
         = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人のクリエイターがみつかりました。コラボを依頼しよう！"
-        %h2.main-h2 新着一覧
+        .jscroll
+          = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @search_products, '前のページ', class: "prev"
+            = link_to_next_page @search_products, '次のページ', class: "next"
+      - else @search_products.count != 0 
+        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人。クリエイターがみつからない時は募集してみよう！"
+        %h2.main-h2.new 新着一覧
         .jscroll
           = render partial: 'user', collection: @products, as: "product", class: "jscroll"
           .skill-list
             = link_to_prev_page @products, '前のページ', class: "prev"
             = link_to_next_page @products, '次のページ', class: "next"
-      - else @search_products.count != 0 
-        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人。クリエイターがみつからない時は募集してみよう！"
-        .jscroll
-          = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
-          .skill-list
-            = link_to_prev_page @search_products, '前のページ', class: "prev"
-            = link_to_next_page @search_products, '次のページ', class: "next"
