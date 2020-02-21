@@ -12,6 +12,9 @@
       %li
         = link_to "新規登録", registration_users_path, class:"btn registration"
   .search_wap
-    %input.input{placeholder:"キーワード"}
-    %i.fas.fa-search
+    = search_form_for @search, url: search_users_path do |f|
+      = f.text_field :name_cont , placeholder: "何かお探しですか？", class: 'input'
+      = button_tag type: 'submit', class: 'search__button' do
+        .icon_wap
+          %i.fas.fa-search
   = link_to "WEBSHARE", root_path, class:"logo"
