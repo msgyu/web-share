@@ -4,9 +4,17 @@
     = render 'shared/side'
     .col-8.main
       %h2.main-h2 コラボ相手を探す
-      = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
-      .jscroll
-        = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
-        .skill-list
-          = link_to_prev_page @search_products, '前のページ', class: "prev"
-          = link_to_next_page @search_products, '次のページ', class: "next"
+      - if @search_products.count != 0 
+        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人のクリエイターがみつかりました。コラボを依頼しよう！"
+        .jscroll
+          = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @search_products, '前のページ', class: "prev"
+            = link_to_next_page @search_products, '次のページ', class: "next"
+      - else @search_products.count != 0 
+        = "「#{params[:q][:name_cont]}」の検索結果: #{@search_products.count}人。クリエイターがみつからない時は募集してみよう！"
+        .jscroll
+          = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
+          .skill-list
+            = link_to_prev_page @search_products, '前のページ', class: "prev"
+            = link_to_next_page @search_products, '次のページ', class: "next"
