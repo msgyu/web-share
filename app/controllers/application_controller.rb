@@ -1,8 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_kana, :lastname_kana, :birth_year, :birth_month, :birth_day, :phone_number])
+  end
+
+
+  def set_search
+    @search = Product.ransack(params[:q]) #ransackメソッド推奨
+    @search_products = @search.result(distinct: true).order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(1)
   end
 end

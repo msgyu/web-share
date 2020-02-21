@@ -2,8 +2,11 @@
   .search-side_child
     %p 条件で絞り込む
     .search_wap
-      %input.input{placeholder:"キーワード"}
-      %i.fas.fa-search
+      = search_form_for @search, url: search_users_path do |f|
+        = f.text_field :name_cont , placeholder: "何かお探しですか？", class: 'input'
+        = button_tag type: 'submit', class: 'search__button' do
+          .icon_wap
+            %i.fas.fa-search
   .search-side_child
     %p 並び順
     .select_wrap
