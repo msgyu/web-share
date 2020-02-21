@@ -4,7 +4,7 @@
     = render 'shared/side'
     .col-8.main
       %h2.main-h2 コラボ相手を探す
-      %p 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！
+      = " 「#{params[:q][:name_cont]}」の検索結果: 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
       .jscroll
         = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
         .skill-list
