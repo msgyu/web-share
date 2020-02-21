@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(1)
   end
 
+  def search
+    @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(1)
+  end
+
   def new
   end
 
