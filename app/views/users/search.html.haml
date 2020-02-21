@@ -6,7 +6,7 @@
       %h2.main-h2 コラボ相手を探す
       %p 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！
       .jscroll
-        = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+        = render partial: 'user', collection: @search_products, as: "product", class: "jscroll"
         .skill-list
-          = link_to_prev_page @products, '前のページ', class: "prev"
-          = link_to_next_page @products, '次のページ', class: "next"
+          = link_to_prev_page @search_products, '前のページ', class: "prev"
+          = link_to_next_page @search_products, '次のページ', class: "next"
