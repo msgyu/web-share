@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
-
   def index
-    @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(5)
-  end
-
-  def search
-    @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(5)
+    @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(1)
   end
 
   def new

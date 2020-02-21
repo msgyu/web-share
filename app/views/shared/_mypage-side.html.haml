@@ -1,6 +1,6 @@
 %ul.list-group
-  %li{class: "list-group-item #{active_class(user_path)}"}
-    = link_to "", user_path, class: "nav-list__link"
+  %li{class: "list-group-item #{active_class(user_path(current_user))}"}
+    = link_to "", user_path(current_user), class: "nav-list__link"
     %p マイページ
   %li{class: "list-group-item #{active_class(new_product_path)}"}
     = link_to "", new_product_path, class: "nav-list__link"
@@ -23,6 +23,9 @@
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p 評価一覧
+  %li{class: "list-group-item #{active_class(creditcards_index_path)}"}
+    = link_to "", creditcards_index_path, class: "nav-list__link"
+    %p 支払い方法の登録
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p 売上・振込申請
