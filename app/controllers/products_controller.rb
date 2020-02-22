@@ -10,6 +10,14 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def get_category_children
+    @children = Category.find(params[:parent_id]).children
+  end
+
+  def get_categry_grandchildren
+    @grandchildren = Category.find(params[:child_id]).children
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
