@@ -12,8 +12,14 @@ $(document).on('turbolinks:load', function(){
         },
         dataType: 'json'
       })
-      .done(function(){
-        
+      .done(function(children){
+        $('#child-category').remove();
+        $('#grandchild-category').remove();
+        var insertHTML = '';
+        children.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
+        });
+        appendGrandchildrenBox(insertHTML);
       })
     }
   })
