@@ -11,7 +11,12 @@ class ProductsController < ApplicationController
   end
 
   def get_category_children
-    @children = Category.find(params[:parent_id]).children
+    respond_to do |format|
+      format.html
+      format.joson do
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
   end
 
   def get_categry_grandchildren
