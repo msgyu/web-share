@@ -1,3 +1,4 @@
+
 $(document).on('turbolinks:load', function() {
   var categoryBox = $('.form-details__form-box__category')
 
@@ -38,7 +39,7 @@ $(document).on('turbolinks:load', function() {
     var parentCategory = $("#parent-category").val();
     if(parentCategory !== "") {
       $.ajax ({
-        url: '/products/get_category_children',
+        url: '/products/:id/get_category_grandchildren',
         type: "GET",
         data: {
           parent_id: parentCategory
@@ -94,4 +95,3 @@ $(document).on('turbolinks:load', function() {
     }
   });
 });
-
