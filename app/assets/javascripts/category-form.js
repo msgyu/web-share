@@ -43,6 +43,11 @@ $(document).on('turbolinks:load', function(){
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
+    } else {
+      //親カテゴリーが初期値（---)の場合、子カテゴリー以下は非表示にする
+      $('#child-category').remove(); 
+      $('#grandchild-category').remove();
+      $('#size').remove();
     }
-  })
-})
+  });
+});
