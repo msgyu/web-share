@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  // カテゴリーの選択肢が入ったdiv
   var categoryBox = $('.form-details__form-box__category')
   // 親カテゴリー
   function appendOption(category) {
@@ -18,6 +19,7 @@ $(document).on('turbolinks:load', function(){
     categoryBox.append(childSelectHtml);
   }
 
+  // カテゴリーボックスで親カテゴリが変わった場合
   categoryBox.on("change", "#parent-category", function(){
     var parentCategory = $("parent-category").value;
     if(parentCategory !== "") {
@@ -37,6 +39,9 @@ $(document).on('turbolinks:load', function(){
           insertHTML += appendOption(grandchild);
         });
         appendGrandchildrenBox(insertHTML);
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
       })
     }
   })
