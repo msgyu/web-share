@@ -8,19 +8,25 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @parents = Category.where(ancestry: nil)
   end
 
   def get_category_children
     respond_to do |format|
       format.html
-      format.joson do
+      format.json do
         @children = Category.find(params[:parent_id]).children
       end
     end
   end
 
   def get_categry_grandchildren
-    @grandchildren = Category.find(params[:child_id]).children
+    respond_to do |format|
+      format.html
+      format.json do
+        @grandchildren = Category.find(params[:child_id]).children
+      end
+    end
   end
 
   def create
@@ -38,7 +44,8 @@ class ProductsController < ApplicationController
       :name,
       :description,
       :period,
-      :price
+      :price,
+      category_ids: []
     )
     .merge(host_id: current_user.id)
   end
