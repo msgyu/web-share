@@ -1,0 +1,15 @@
+.product{
+  background: #fff;
+  padding: 32px;
+  border-bottom: 3px solid #e8e8e8;
+  &:not(:first-child){
+    margin-top: 32px;
+  }
+  &-title{
+    color: $black;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+}
