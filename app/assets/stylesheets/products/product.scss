@@ -6,13 +6,21 @@
     margin-top: 32px;
   }
   &-title{
-    color: $black;
+    color: #333333;
     line-height: 1.7;
     font-size: 18px;
     font-weight: bold;
-
   }
   &-price{
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  &-description{
+    font-size: 14px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  &-btn{
+    @include btn;
   }
 }
