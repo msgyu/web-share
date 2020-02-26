@@ -1,4 +1,8 @@
 = render 'shared/main-header'
 .container-fluid
   .row.py-5.w-100
-    = render 'shared/mypage-side'
+    = render 'shared/side'
+    .col-8.main
+      %h2.main-h2 プラン
+      .content-area
+        = render partial: 'products/product', collection: @user.selling_products, as: "product"
