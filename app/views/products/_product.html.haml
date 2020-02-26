@@ -4,3 +4,5 @@
   .product-price
     = "#{product.price}円"
   .product-description
+    = simple_format(product.description)
+  = link_to "契約する",users_path,class:"product-btn active"
