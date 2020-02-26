@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :selling_products, -> { where("client_id is NULL") }, class_name: "product", foreign_key: "host_id"
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
