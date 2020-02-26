@@ -38,11 +38,9 @@ $(document).on('turbolinks:load', function() {
     var parentCategory = $("#parent-category").val();
     if(parentCategory !== "") {
       $.ajax ({
-        url: '/products/get_category_children',
+        url: '/products/:id/get_category_children',
         type: "GET",
-        data: {
-          parent_id: parentCategory
-        },
+        data: { parent_id: parentCategory },
         dataType: 'json'
       })
       .done(function(children) {
@@ -66,7 +64,7 @@ $(document).on('turbolinks:load', function() {
   });
   
   //子カテゴリー選択後のイベント
-  categoryBox.on('change','#child-category',function(){
+  $(document).on('change','#child-category',function(){
     var childCategory = $('#child-category option:selected').data('category'); 
     if (childCategory != null){ 
       $.ajax({
@@ -94,4 +92,3 @@ $(document).on('turbolinks:load', function() {
     }
   });
 });
-
