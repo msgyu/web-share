@@ -2,7 +2,7 @@
   %ul.float-right
     - if user_signed_in?
       %li 
-        = link_to "マイページ", user_path(current_user.id), class:"btn login"
+        = link_to "マイページ", mypage_users_path(current_user.id), class:"btn login"
       %li 
         = link_to "ログアウト", destroy_user_session_path, class:"btn login"
       
