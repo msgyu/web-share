@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :registration
       get :contents
       get :search
+      get :mypage
     end
   end
   resources :creditcards, except: :show
