@@ -1,10 +1,6 @@
 $(document).on('turbolinks:load',function(){
   Payjp.setPublicKey('pk_test_62c91b0f0f85efaf575ea6b5');
-  var form = $(".form"),
-      number = form.find('input[name="card_number"]'),
-      cvc = form.find('input[name="cvc"]'),
-      exp_month = form.find('select[name="exp_month"]'),
-      exp_year = form.find('select[name="exp_year"]');
+  var form = $(".form");
 
 
   $("#charge-form").click(function() {
