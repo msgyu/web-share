@@ -1,6 +1,6 @@
 %ul.list-group
-  %li{class: "list-group-item #{active_class(user_path(current_user))}"}
-    = link_to "", user_path(current_user), class: "nav-list__link"
+  %li{class: "list-group-item #{active_class(mypage_users_path(current_user))}"}
+    = link_to "", mypage_users_path(current_user), class: "nav-list__link"
     %p マイページ
   %li{class: "list-group-item #{active_class(new_product_path)}"}
     = link_to "", new_product_path, class: "nav-list__link"
