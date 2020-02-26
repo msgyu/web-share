@@ -8,8 +8,11 @@
   &-title{
     color: $black;
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 
+  }
+  &-price{
+    font-size: 16px;
   }
 }
