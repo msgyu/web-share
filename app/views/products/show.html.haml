@@ -1,0 +1,29 @@
+= render 'shared/main-header'
+.container-fluid
+  .row.py-5.w-100
+    = render 'shared/side'
+    .col-8.main
+      .info
+        .buy-info
+          %h3 プラン情報確認
+          %p 
+            = @product.name
+          %p
+            = "支払い金額  ¥#{@product.price}"
+          = link_to "契約する"
+        .payment-info
+          %h3 決済方法の確認
+          %section
+            %h4 支払い方法
+            - if @card.present?
+              %p.buy-user-info--text
+                = "**** **** **** " + @card_info.last4
+              %br
+              = @exp_month + " / " + @exp_year
+              %br
+              = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
+              .buy-info__user--fix 
+                = link_to '変更する', creditcards_path
+                = fa_icon 'chevron-right'
+            - else
+              = link_to '追加する', creditcards_path
