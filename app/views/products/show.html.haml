@@ -11,7 +11,7 @@
           %p
             = "支払い金額  ¥#{@product.price}"
           .buy-info_agree
-            = link_to new_creditcard_path, class:"buy-info_agree_btn" do
+            = link_to buy_creditcards_path(product_id: @product.id), class:"buy-info_agree_btn" do
               契約する
         .payment-info
           %h3 決済方法の確認
