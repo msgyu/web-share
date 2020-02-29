@@ -10,7 +10,9 @@
             = @product.name
           %p
             = "支払い金額  ¥#{@product.price}"
-          = link_to "契約する"
+          .buy-info_agree
+            = link_to new_creditcard_path, class:"buy-info_agree_btn" do
+              契約する
         .payment-info
           %h3 決済方法の確認
           %section
@@ -26,4 +28,7 @@
                 = link_to '変更する', creditcards_path
                 = fa_icon 'chevron-right'
             - else
-              = link_to '追加する', creditcards_path
+              .new-card
+                = link_to new_creditcard_path, class:"new-card-btn" do
+                  %i.far.fa-credit-card 
+                  クレジットカードを追加する

@@ -7,6 +7,44 @@
       margin-top: 50px;
     }
   }
+  .info {
+    .buy-info {
+      &_agree {
+        padding: 24px 0;
+        margin: 0 0 50px;
+        &_btn {
+          width: 320px;
+          height: 50px;
+          padding: 18px 141px;
+          margin: 0 0 8px;
+          color: #fff;
+          background: $green;
+          text-align: center;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  .new-card{
+    min-width: 320px;
+    padding: 24px 0;
+    &-btn{
+      width: 500px;
+      height: 50px;
+      padding: 18px 54px;
+      margin: 0 0 8px;
+      color: #fff;
+      background: $green;
+      text-align: center;
+      line-height: 50px;
+      i{
+        color: #fff;
+        padding-right: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+  
   .user{
     margin-top: 20px;
     padding: 30px 20px;
