@@ -22,7 +22,7 @@
         .payment-info
           %h3 決済方法の確認
           %section
-            %h4 支払い方法
+            %h4 クレジットカード
             - if @card.present?
               %p.buy-user-info--text
                 = "**** **** **** " + @card_info.last4
