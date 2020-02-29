@@ -1,0 +1,8 @@
+.product
+  %h3.product-title
+    = product.name
+  .product-price
+    = "#{product.price}円"
+  .product-description
+    = simple_format(product.description)
+  = link_to "契約する", product_path(product.id), class:"product-btn active"

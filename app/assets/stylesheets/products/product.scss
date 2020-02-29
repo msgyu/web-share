@@ -1,0 +1,26 @@
+.product{
+  background: #fff;
+  padding: 32px;
+  border-bottom: 3px solid #e8e8e8;
+  &:not(:first-child){
+    margin-top: 32px;
+  }
+  &-title{
+    color: #333333;
+    line-height: 1.7;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &-price{
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  &-description{
+    font-size: 14px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  &-btn{
+    @include btn;
+  }
+}

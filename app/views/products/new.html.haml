@@ -22,7 +22,6 @@
               = fa_icon 'angle-down', class: 'icon-angle-down'
               = f.select :period, [["---", ""], ["１週間以内","7"], ["２週間以内","14"], ["１ヶ月以内","31"], ["３ヶ月以内","93"]], {}, class: "select-default"
           .form-details
-            %h3 商品の詳細
             .form-details__form-box
               .form-details__form-box__category
                 %label.label カテゴリー
@@ -30,18 +29,18 @@
                 .form-select
                   = fa_icon 'angle-down', class: 'icon-angle-down'
                   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, name: 'product[category_ids][]', class: "select-default", id: "parent-category"
-              .form-details__form-box__brand 
-                = f.fields_for :brand, {} do |brand|
-                  %label.label ブランド
-                  %span.optional 任意
-                  .form-input
-                    = brand.text_field :name, class: "input-default", placeholder: "例）シャネル", autocomplete: "off"
-              .form-details__form-box__condition
-                %label.label 商品の状態
-                %span 必須
-                .form-select
-                  = fa_icon 'angle-down', class: 'icon-angle-down'
-                  = f.select :condition, [["---", ""], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {}, class: "select-default"
+              -# .form-details__form-box__brand 
+              -#   = f.fields_for :brand, {} do |brand|
+              -#     %label.label ブランド
+              -#     %span.optional 任意
+              -#     .form-input
+              -#       = brand.text_field :name, class: "input-default", placeholder: "例）シャネル", autocomplete: "off"
+              -# .form-details__form-box__condition
+              -#   %label.label 商品の状態
+              -#   %span 必須
+              -#   .form-select
+              -#     = fa_icon 'angle-down', class: 'icon-angle-down'
+              -#     = f.select :condition, [["---", ""], ["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {}, class: "select-default"
         .form-price
           %h3 販売価格(300〜9,999,999)
           .form-price__form-box

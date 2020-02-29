@@ -11,9 +11,12 @@
 @import "./registration/new";
 @import "./registration/registration";
 @import "./users/show";
-@import "./products/new";
+@import "./users/show-main";
 @import "./creditcards/index";
 @import "./creditcards/form";
+@import "./products/new";
+@import "./products/product";
+@import "./products/buy";
 .row{
   margin: 0;
 }

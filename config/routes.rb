@@ -10,9 +10,16 @@ Rails.application.routes.draw do
       get :registration
       get :contents
       get :search
+      get :mypage
     end
   end
-  resources :creditcards, except: :show
+  
+  resources :creditcards, except: :show do
+    collection do
+      get 'buy'
+    end
+  end
+
   resources :products do
     collection do
       get 'get_category_children', defaults: { format: 'json' }

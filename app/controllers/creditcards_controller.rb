@@ -31,6 +31,24 @@ class CreditcardsController < ApplicationController
     @card = Creditcard.where(user_id: current_user.id).first
     redirect_to action: "index" if @card.present?    
   end
+
+  def buy
+    @product = Product.find(params[:product_id])
+    if @card.blank?
+      redirect_to action: "new"
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp::Charge.create(
+      amount: @product.price,
+      customer: @card.customer_id,
+      currency: 'jpy',
+      )
+      flash[:notice] = '購入しました。'
+      redirect_to controller: 'products', action: 'show', id: @product.id
+    end
+  end
+
   
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -66,6 +84,7 @@ class CreditcardsController < ApplicationController
       redirect_to action: "index", alert: "削除できませんでした"
     end
   end
+  
 
   private
   def set_card
