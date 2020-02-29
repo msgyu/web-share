@@ -34,9 +34,7 @@ class CreditcardsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    if @product.buyer.present? 
-      redirect_back(fallback_location: root_path) 
-    elsif @card.blank?
+    if @card.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
@@ -46,16 +44,11 @@ class CreditcardsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
       )
-      if @product.update(buyer_id: current_user.id)
-        flash[:notice] = '購入しました。'
-        redirect_to controller: 'products', action: 'show', id: @product.id
-      else
-        flash[:alert] = '購入に失敗しました。'
-        redirect_to controller: 'products', action: 'show', id: @product.id
-      end
+      flash[:notice] = '購入しました。'
+      redirect_to controller: 'products', action: 'show', id: @product.id
     end
   end
-  
+
   
   def create
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
