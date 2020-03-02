@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :selling_products, class_name: "Product", foreign_key: "host_id"
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
