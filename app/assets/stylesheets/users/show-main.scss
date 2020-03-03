@@ -42,6 +42,16 @@
       font-size: 12px;
     }
   }
+  .submit{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    background-color: $green;
+    color: #FFFFFF;
+    font-size: 15px;
+    cursor: pointer;
+  }
 }
 .user-show{
   background: #fff;
