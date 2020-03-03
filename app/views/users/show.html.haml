@@ -5,17 +5,25 @@
     .col-8.main
       .content-area
         .user-title
-          %h2 ここにタイトルが入ります。
+          %h2 
+            - if @user.title?
+              = @user.title
+            - else
+              = タイトルは未設定です
         .user-content
           %h3.h3-title できること
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
+          %p 
+            - if @user.cando?
+              = @user.cando
+            - else
+              = 未設定
         .user-content
           %h3.h3-title プロフィール
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
-
-        .user-content
-          %h3.h3-title ターゲット層
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
+          %p
+            - if @user.profile?
+              = @user.profile
+            - else
+              = プロフィールは未設定です
 
       %h2.main-h2 プラン
       = render partial: 'products/product', collection: @user.selling_products, as: "product"
