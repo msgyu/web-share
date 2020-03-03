@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :products
   has_many :bought_products, class_name: "Product", foreign_key: "client_id"
   has_many :selling_products, class_name: "Product", foreign_key: "host_id"
-  has_one_attached :avator
+  has_one_attached :avatar
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
