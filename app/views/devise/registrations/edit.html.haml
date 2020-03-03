@@ -7,19 +7,18 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
           = render "devise/shared/error_messages", resource: resource
           .user-title
-            = f.text_field :title, autofocus: true, placeholder: "タイトル"
+            = f.text_field :title, class: "user-title_input", autofocus: true, placeholder: "タイトル"
           .user-content
             %h3.h3-title できること
-            = f.text_area :cando, autofocus: true, placeholder: "あなたが提供できること"
+            = f.text_area :cando, class: "text_area", autofocus: true, placeholder: "あなたが提供できること"
           .user-content
             %h3.h3-title プロフィール
-            = f.text_area :profile, autofocus: true, placeholder: "プロフィールを書いて成約率をあげよう"
+            = f.text_area :profile, class: "text_area", autofocus: true, placeholder: "プロフィールを書いて成約率をあげよう"
 
           .user-content
             %h3.h3-title 視聴者層
             %p 男性: 20代 30代 40代 50代
             %p 女性: 30代
-          = f.file_field :avatar, value: current_user.avatar
           = f.label :nickname, "ニックネーム"
           = f.text_field :nickname
           = f.submit "更新"
