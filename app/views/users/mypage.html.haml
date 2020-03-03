@@ -10,21 +10,21 @@
             - if current_user.title?
               = current_user.title
             - else
-              = こちらにタイトルが表示されます。
+              %p こちらにタイトルが表示されます。
         .user-content
           %h3.h3-title できること
           %p 
             - if current_user.cando?
               = current_user.cando
             - else
-              = あなたが提供できることについて、説明してください。
+              %p あなたが提供できることについて、説明してください。
         .user-content
           %h3.h3-title プロフィール
           %p
             - if current_user.profile?
               = current_user.profile
             - else
-              = プロフィールを設定してください。
+              %p プロフィールを設定してください。
 
         .user-content
           %h3.h3-title 視聴者層
