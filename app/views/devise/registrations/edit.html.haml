@@ -6,6 +6,9 @@
       .content-area
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
           = render "devise/shared/error_messages", resource: resource
+          .user-content
+            %h3.h3-title ニックネーム
+            = f.text_field :nickname
           .user-title
             = f.text_field :title, class: "user-title_input", autofocus: true, placeholder: "タイトル"
           .user-content
@@ -19,8 +22,6 @@
             %h3.h3-title 視聴者層
             %p 男性: 20代 30代 40代 50代
             %p 女性: 30代
-          = f.label :nickname, "ニックネーム"
-          = f.text_field :nickname
           = f.submit "更新", class: "submit"
 
 -# %h2
