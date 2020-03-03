@@ -5,14 +5,28 @@
     .col-8.main
       .content-area
         .user-title
-          ここにタイトルが入ります。
+          = link_to "編集", edit_user_registration_path, class: "edit-btn"
+          %h2 
+            - if current_user.title?
+              = current_user.title
+            - else
+              %p こちらにタイトルが表示されます。
         .user-content
           %h3.h3-title できること
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
+          %p 
+            - if current_user.cando?
+              = current_user.cando
+            - else
+              %p あなたが提供できることについて、説明してください。
         .user-content
           %h3.h3-title プロフィール
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
+          %p
+            - if current_user.profile?
+              = current_user.profile
+            - else
+              %p プロフィールを設定してください。
 
         .user-content
-          %h3.h3-title ターゲット層
-          %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
+          %h3.h3-title 視聴者層
+          %p 男性: 20代 30代 40代 50代
+          %p 女性: 30代

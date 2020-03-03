@@ -4,9 +4,23 @@
   margin-bottom: 50px;
   .user-content {
     line-height: 1.7;
+    .text_area{
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-height: 142px;
+      padding: 10px;
+      border: 1px solid $border-form-gray;
+      background: $white;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+      margin: 8px 0 0;
+    }
     .h3-title{
       font-size: 18px;
       color: #13b1c0;
+
     }
     &:not(:first-child){
       .h3-title{
@@ -19,6 +33,24 @@
     font-size: 32px;
     padding: 10px 0;
     line-height: 1.3;
+    &_input{
+      width: 100%;
+    }
+    .edit-btn{
+      float: right;
+      @include btn;
+      font-size: 12px;
+    }
+  }
+  .submit{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    background-color: $green;
+    color: #FFFFFF;
+    font-size: 15px;
+    cursor: pointer;
   }
 }
 .user-show{
