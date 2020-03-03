@@ -19,6 +19,11 @@
     font-size: 32px;
     padding: 10px 0;
     line-height: 1.3;
+    .edit-btn{
+      float: right;
+      @include btn;
+      font-size: 12px;
+    }
   }
 }
 .user-show{

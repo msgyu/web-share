@@ -5,12 +5,12 @@
     .col-8.main
       .content-area
         .user-title
+          = link_to "編集", edit_user_registration_path, class: "edit-btn"
           %h2 
             - if current_user.title?
               = current_user.title
             - else
               = こちらにタイトルが表示されます。
-          = link_to "編集", edit_user_registration_path, class: "btn"
         .user-content
           %h3.h3-title できること
           %p 
@@ -28,5 +28,5 @@
 
         .user-content
           %h3.h3-title 視聴者層
-            %p 男性: 20代 30代 40代 50代
-            %p 女性: 30代
+          %p 男性: 20代 30代 40代 50代
+          %p 女性: 30代
