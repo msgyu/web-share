@@ -5,7 +5,8 @@
     .col-8.main
       .content-area
         .user-title
-          ここにタイトルが入ります。
+          %h2 ここにタイトルが入ります。
+          = link_to "編集", edit_user_path(current_user.id), class: "btn"
         .user-content
           %h3.h3-title できること
           %p ここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れるここにできることを入れる
