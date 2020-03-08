@@ -4,7 +4,8 @@
     = render 'shared/side'
     .col-8.main
       %h2.main-h2 コラボ相手を探す
-      %p 1079人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！
+      %p 
+        = "#{@hosts.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
       .jscroll
         = render partial: 'user', collection: @hosts, as: "host", class: "jscroll"
         .skill-list
