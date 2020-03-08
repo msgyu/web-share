@@ -9,5 +9,5 @@
       .jscroll
         = render partial: 'user', collection: @hosts, as: "host", class: "jscroll"
         .skill-list
-          = link_to_prev_page @products, '前のページ', class: "prev"
-          = link_to_next_page @products, '次のページ', class: "next"
+          = link_to_prev_page @hosts, '前のページ', class: "prev"
+          = link_to_next_page @hosts, '次のページ', class: "next"
