@@ -10,7 +10,10 @@
       .user_info_score
         = "評価 ★★★★"
       .user_info_score
-        = "#{host.selling_products.minimum(:price)}円"
+        - if host.selling_products.count == 1
+          = "#{host.selling_products.minimum(:price)}円"
+        - else 
+          = "#{host.selling_products.minimum(:price)}円 〜"
       = link_to "", user_path(host), class: "user_info_link"
 
     .user_btn.col-2
