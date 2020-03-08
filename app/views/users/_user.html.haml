@@ -4,14 +4,14 @@
       = image_tag "member_photo_noimage_thumb.png"
     .user_info.col-8
       .user_info_name
-        = product.host.nickname
+        = host.nickname
       .user_info_title
-        = product.name
+        = host.title
       .user_info_score
         = "評価 ★★★★"
       .user_info_score
-        = "#{product.price}円"
-      = link_to "", user_path(product.host), class: "user_info_link"
+        = "#{host.selling_products.minimum(:price)}円"
+      = link_to "", user_path(host), class: "user_info_link"
 
     .user_btn.col-2
       = link_to "", class: "btn" do
