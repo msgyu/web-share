@@ -30,3 +30,6 @@
           %h3.h3-title 視聴者層
           %p 男性: 20代 30代 40代 50代
           %p 女性: 30代
+      
+      %h2.main-h2 プラン
+      = render partial: 'products/product', collection: current_user.selling_products, as: "product"
