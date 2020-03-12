@@ -4,7 +4,7 @@ lock '3.11.1'
 
 # Capistranoのログの表示に利用する
 set :application, 'web-share'
-set :deploy_to, '/var/app/web-share'
+set :deploy_to, '/var/www/web-share'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:nousi/web-share.git'
@@ -14,11 +14,11 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
+set :rbenv_ruby, '2.5.1' 
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/web-share-key.pem'] 
+                  keys: ['~/.ssh/webshare2.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
