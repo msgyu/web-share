@@ -27,9 +27,18 @@
               %p プロフィールを設定してください。
 
         .user-content
+          %h3.h3-title SNS
+          = link_to "Youtube", ""
+          %p 登録者数: 1000人
+          %p 男性: 20代 30代 40代 50代
+          %p 女性: 30代
+          
+          = link_to "SNSを追加", "", class: "btn-new"
+          
+        .user-content
           %h3.h3-title 視聴者層
           %p 男性: 20代 30代 40代 50代
           %p 女性: 30代
-      
+
       %h2.main-h2 プラン
       = render partial: 'products/product', collection: current_user.products, as: "product"
