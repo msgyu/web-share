@@ -1,4 +1,4 @@
-class SnsesController < ApplicationController
+class SnsController < ApplicationController
   def new
     @sns = Sns.new    
   end
@@ -15,5 +15,15 @@ class SnsesController < ApplicationController
   def destroy
     @sns = Sns.find(params[:id])
     @sns.destroy
+  end
+
+  private
+
+  def sns_params
+    params.require(:sns).permit(
+      
+      :url,
+    )
+    .merge(user_id: current_user.id)
   end
 end

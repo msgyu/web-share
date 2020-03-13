@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SnsesControllerTest < ActionDispatch::IntegrationTest
+class SnsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
