@@ -1,0 +1,2 @@
+class SnsProduct < ApplicationRecord
+end
