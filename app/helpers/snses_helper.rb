@@ -1,0 +1,2 @@
+module SnsesHelper
+end
