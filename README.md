@@ -52,8 +52,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
+|kind|string|null: false|
 |url|string|-------|
-|registration|string|-------|
+|follower|integer|-------|
 
 ## Association
 has_many :products
@@ -64,6 +65,10 @@ belongs_to :user
 |------|----|-------|
 |user_id|references|foreign_key: true|
 |product_id|references|foreign_key: true|
+
+## Association
+belongs_to :sns
+belongs_to :product
 
 
 ## websites
@@ -130,6 +135,7 @@ belongs_to :user
 
 ### Association
 - has_many: sns
+- has_many: sns_product
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to :user
