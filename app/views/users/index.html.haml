@@ -5,7 +5,7 @@
     .col-8.main
       %h2.main-h2 コラボ相手を探す
       %p 
-        - if @hosts.count.nill?
+        - if @hosts.nill?
           = "クリエイターがみつからない時は募集してみよう！"
         - else
           = "#{@hosts.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
