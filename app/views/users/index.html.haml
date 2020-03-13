@@ -8,7 +8,7 @@
         - if @hosts.nil?
           = "クリエイターがみつからない時は募集してみよう！"
         - else
-          = "#{@hosts.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
+          = "#{@hosts}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
       .jscroll
         = render partial: 'user', collection: @hosts, as: "host", class: "jscroll"
         .skill-list
