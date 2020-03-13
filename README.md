@@ -29,7 +29,7 @@
 <!-- address_phone_numberは本人の住所情報には必要ない -->
 
 ### Association
-- has_many :youtuber
+- has_many :sns
 - has_many :websites
 - has_many :products
 - has_many :bought_products, class_name: "product", foreign_key: "client_id"
@@ -49,7 +49,7 @@
 - has_many :sns_credentials, dependent: :destroy
 - belongs_to_active_hash :prefecture
 
-## youtuberテーブル
+## snsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
@@ -59,6 +59,13 @@
 ## Association
 has_many :products
 belongs_to :user
+
+## sns_productテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|product_id|references|foreign_key: true|
+
 
 ## websites
 |Column|Type|Options|
@@ -123,6 +130,7 @@ belongs_to :user
 |client_id|references|foreign_key: { to_table: :users }|
 
 ### Association
+- has_many: sns
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to :user

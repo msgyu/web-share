@@ -5,4 +5,7 @@
     = "#{product.price}円"
   .product-description
     = simple_format(product.description)
-  = link_to "契約する", product_path(product.id), class:"product-btn active"
+  - if controller.action_name.in?(['mypage'])
+    = link_to "編集する", edit_product_path(product.id), class:"product-btn active"
+  - else
+    = link_to "契約する", product_path(product.id), class:"product-btn active"
