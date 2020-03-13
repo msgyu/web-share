@@ -7,7 +7,7 @@
         .user-title
           = link_to "編集", edit_user_registration_path, class: "edit-btn"
           %h2 
-            - if current_user.title?
+            - unless current_user.title.nil?
               = current_user.title
             - else
               %p こちらにタイトルが表示されます。
