@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = Product.ransack(params[:q]) #ransackメソッド推奨
-    @search_products = @search.result(distinct: true).order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(1)
+    @search_products = @search.result(distinct: true).order(created_at: "DESC").includes(:user).page(params[:page]).without_count.per(1)
   end
 end

@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
       :price,
       category_ids: []
     )
-    .merge(host_id: current_user.id)
+    .merge(user_id: current_user.id)
   end
 
 end

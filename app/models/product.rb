@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :host, class_name: "User", foreign_key: "host_id"
+  belongs_to :User
   belongs_to :client, class_name: "User", foreign_key: "client_id", optional: true
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories

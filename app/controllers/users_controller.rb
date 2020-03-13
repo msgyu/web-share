@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @hosts = User.order(created_at: "DESC").page(params[:page]).without_count.per(5).joins('LEFT JOIN Products ON users.id = products.host_id').where('products.id IS NOT NULL').distinct
-    # @hosts = User.joins('LEFT JOIN Products ON users.id = products.host_id').where('products.id IS NOT NULL')
-    # @hosts = User.order(created_at: "DESC").page(params[:page]).without_count.per(5)
+    @users = User.order(created_at: "DESC").page(params[:page]).without_count.per(5).joins(:products).preload(:products).distinct
   end
 
   def search
-    @products = Product.order(created_at: "DESC").includes(:host).page(params[:page]).without_count.per(5)
+    @products = Product.order(created_at: "DESC").includes(:user).page(params[:page]).without_count.per(5)
   end
 
   def new

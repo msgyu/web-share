@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_172534) do
+ActiveRecord::Schema.define(version: 2020_03_13_145943) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -64,13 +64,13 @@ ActiveRecord::Schema.define(version: 2020_03_08_172534) do
     t.text "description", null: false
     t.string "period", null: false
     t.integer "price", null: false
-    t.bigint "host_id"
+    t.bigint "user_id"
     t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_products_on_client_id"
-    t.index ["host_id"], name: "index_products_on_host_id"
     t.index ["name"], name: "index_products_on_name"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -111,6 +111,6 @@ ActiveRecord::Schema.define(version: 2020_03_08_172534) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "creditcards", "users"
+  add_foreign_key "products", "users"
   add_foreign_key "products", "users", column: "client_id"
-  add_foreign_key "products", "users", column: "host_id"
 end

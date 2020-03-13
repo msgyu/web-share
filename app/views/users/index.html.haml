@@ -5,12 +5,12 @@
     .col-8.main
       %h2.main-h2 コラボ相手を探す
       %p 
-        - if @hosts.nil?
+        - if @users.nil?
           = "クリエイターがみつからない時は募集してみよう！"
         - else
-          = "#{@hosts.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
+          = "#{@users.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
       .jscroll
-        = render partial: 'user', collection: @hosts, as: "host", class: "jscroll"
+        = render partial: 'user', collection: @users, as: "host", class: "jscroll"
         .skill-list
-          = link_to_prev_page @hosts, '前のページ', class: "prev"
-          = link_to_next_page @hosts, '次のページ', class: "next"
+          = link_to_prev_page @users, '前のページ', class: "prev"
+          = link_to_next_page @users, '次のページ', class: "next"
