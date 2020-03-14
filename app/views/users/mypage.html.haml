@@ -32,6 +32,9 @@
           %p 登録者数: 1000人
           %p 男性: 20代 30代 40代 50代
           %p 女性: 30代
+          %ul
+            - current_user.sns.each do |sns|
+              = link_to "#{sns.kind}", "#{sns.url}", target: :_blank
           = form_with model: @sn do |f|
             = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["ブログ・WEBサイト"], ["Tik Tok"] ]
             = f.text_field :url, placeholder: "URLを入力"
