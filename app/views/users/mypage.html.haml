@@ -32,8 +32,10 @@
           %p 登録者数: 1000人
           %p 男性: 20代 30代 40代 50代
           %p 女性: 30代
-          
-          = link_to "SNSを追加", "", class: "btn-new"
+          = form_with model: @sn do |f|
+            = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["ブログ・WEBサイト"], ["Tik Tok"] ]
+            = f.text_field :url, placeholder: "URLを入力"
+            = f.submit "登録完了", class: "btn"
           
         .user-content
           %h3.h3-title 視聴者層
