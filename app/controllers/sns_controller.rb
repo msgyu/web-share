@@ -22,8 +22,7 @@ class SnsController < ApplicationController
   def sns_params
     params.require(:sn).permit(
       :kind,
-      :url,
-      :follower
+      :url
     )
     .merge(user_id: current_user.id)
   end
