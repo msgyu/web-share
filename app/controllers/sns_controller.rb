@@ -1,11 +1,24 @@
 class SnsController < ApplicationController
+  require 'mechanize'
+
   def new
     @sns = Sn.new    
+  end
+
+  def mechanize(sns)
+    @sns = Sn.find(sns.id)
+    agent = Mechanize.new
+    page = agent.get("#{sns.url}")
+    title = page.search('.ytd-channel-name').inner_text
+    follower = page.search('.ytd-c4-tabbed-header-renderer').inner_text
+    @sns.update(follower: follower)
   end
 
   def create
     @sns = Sn.new(sns_params)
     if @sns.save
+      binding.pry 
+      @sns.mechanize
       redirect_to mypage_users_path, notice:"投稿完了"
     else
       render "new"
