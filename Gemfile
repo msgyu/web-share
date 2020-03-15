@@ -127,3 +127,4 @@ gem 'omniauth-rails_csrf_protection'
 
 # スクレイピング
 gem 'mechanize'
+gem 'google-api-client', '~> 0.11.1'
