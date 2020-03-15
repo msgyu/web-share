@@ -54,6 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @parents = Category.where(ancestry: nil)
     @product = Product.new(product_params)
     if @product.save
       redirect_to user_path(current_user.id), notice:"投稿完了"
