@@ -31,11 +31,23 @@
           %ul.sns-ul
             - current_user.sns.each do |sns|
               %li.sns-ul_li
-                - if sns.kind == "Youtube"
-                  %i.fab.fa-youtube.youtube
-                  = link_to "#{sns.kind}", "#{sns.url}", target: :_blank
+                = link_to "#{sns.url}", target: :_blank do
+                  - if sns.kind == "Youtube"
+                    %i.fab.fa-youtube.youtube
+                  - if sns.kind == "instagram"
+                    %i.fab.fa-instagram.instagram
+                  - if sns.kind == "Twitter"
+                    %i.fab.fa-twitter.twitter
+                  - if sns.kind == "Facebook"
+                    %i.fab.fa-facebook.facebook
+                  - if sns.kind == "Tik Tok"
+                    %p Tik Tok
+                  - if sns.kind == "ブログ・WEBサイト"
+                    %p ブログ・WEBサイト
+                  - unless sns.kind.in?(["Tik Tok","ブログ・WEBサイト"])
+                    = sns.kind
           = form_with model: @sn do |f|
-            = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["ブログ・WEBサイト"], ["Tik Tok"] ]
+            = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["Tik Tok"], ["ブログ・WEBサイト"]]
             = f.text_field :url, placeholder: "URLを入力"
             = f.submit "登録完了", class: "btn"
           
