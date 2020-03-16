@@ -75,7 +75,10 @@
       }
     }
     .sns-ul{
-      display: block;
+      &_li{
+        display: block;
+
+      }
       .youtube {
         color: red;
       }
