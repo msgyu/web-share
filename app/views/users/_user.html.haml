@@ -10,6 +10,14 @@
         = host.nickname
       .user_info_title
         = host.title
+      .user_info_sns
+        - if host.sns
+          %ul.sns-ul
+            - host.sns.each do |sns|
+              %li.sns-ul_li
+                - if sns.kind == "Youtube"
+                  = link_to "#{sns.url}", target: :_blank do
+                    %i.fab.fa-youtube.youtube
       .user_info_score
         = "評価 ★★★★"
       .user_info_score
