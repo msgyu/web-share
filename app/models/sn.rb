@@ -9,7 +9,6 @@ class Sn < ApplicationRecord
     page = agent.get("#{self.url}")
     title = page.search('#text').inner_text
     follower = page.search('#subscriber-count').inner_text
-    binding.pry
     self.update(follower: follower)
   end
 end
