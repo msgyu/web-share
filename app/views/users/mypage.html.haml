@@ -46,6 +46,7 @@
                     %p ブログ・WEBサイト
                   - unless sns.kind.in?(["Tik Tok","ブログ・WEBサイト"])
                     = sns.kind
+                = link_to "削除", sn_path(sns.id), method: :delete, class:"btn"
           = form_with model: @sn do |f|
             = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["Tik Tok"], ["ブログ・WEBサイト"]]
             = f.text_field :url, placeholder: "URLを入力"
