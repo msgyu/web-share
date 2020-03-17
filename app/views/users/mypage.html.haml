@@ -41,12 +41,13 @@
                   - if sns.kind == "Facebook"
                     %i.fab.fa-facebook.facebook
                   - if sns.kind == "Tik Tok"
-                    %p Tik Tok
+                    = "#{sns.kind}"
                   - if sns.kind == "ブログ・WEBサイト"
-                    %p ブログ・WEBサイト
+                    = "#{sns.kind}"
                   - unless sns.kind.in?(["Tik Tok","ブログ・WEBサイト"])
                     = sns.kind
-                = link_to "削除", sn_path(sns.id), method: :delete, class:"btn"
+                = link_to sn_path(sns.id), method: :delete, class:"btn" do
+                  %i.far.fa-times-circle
           = form_with model: @sn do |f|
             = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["Tik Tok"], ["ブログ・WEBサイト"]]
             = f.text_field :url, placeholder: "URLを入力"
