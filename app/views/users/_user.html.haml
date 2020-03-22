@@ -15,19 +15,18 @@
           %ul.sns-ul
             - host.sns.each do |sns|
               %li.sns-ul_li
-                = link_to "#{sns.url}", target: :_blank do
-                  - if sns.kind == "Youtube"
-                    %i.fab.fa-youtube.youtube
-                  - if sns.kind == "instagram"
-                    %i.fab.fa-instagram
-                  - if sns.kind == "Twitter"
-                    %i.fab.fa-twitter
-                  - if sns.kind == "Facebook"
-                    %i.fab.fa-facebook
-                  - if sns.kind == "Tik Tok"
-                    %p Tik Tok
-                  - if sns.kind == "site"
-                    %p ブログ・WEBサイト
+                - if sns.kind == "Youtube"
+                  %i.fab.fa-youtube.youtube
+                - if sns.kind == "instagram"
+                  %i.fab.fa-instagram
+                - if sns.kind == "Twitter"
+                  %i.fab.fa-twitter
+                - if sns.kind == "Facebook"
+                  %i.fab.fa-facebook
+                - if sns.kind == "Tik Tok"
+                  %p Tik Tok
+                - if sns.kind == "site"
+                  %p ブログ・WEBサイト
                 
       .user_info_score
         = "評価 ★★★★"
