@@ -10,6 +10,24 @@
         = host.nickname
       .user_info_title
         = host.title
+      .user_info_sns
+        - if host.sns
+          %ul.sns-ul
+            - host.sns.each do |sns|
+              %li.sns-ul_li
+                - if sns.kind == "Youtube"
+                  %i.fab.fa-youtube.youtube
+                - if sns.kind == "instagram"
+                  %i.fab.fa-instagram
+                - if sns.kind == "Twitter"
+                  %i.fab.fa-twitter
+                - if sns.kind == "Facebook"
+                  %i.fab.fa-facebook
+                - if sns.kind == "Tik Tok"
+                  %p Tik Tok
+                - if sns.kind == "site"
+                  %p ブログ・WEBサイト
+                
       .user_info_score
         = "評価 ★★★★"
       .user_info_score

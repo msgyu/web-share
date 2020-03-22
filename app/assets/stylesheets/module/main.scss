@@ -93,6 +93,17 @@
         margin: 10px 0;
         
       }
+      &_sns{
+        .sns-ul{
+          .sns-ul_li{
+            display: inline-block;
+            .youtube{
+              color: red;
+            }
+          }
+        }
+
+      }
       &_score{
         font-size: 13px;
         color:#333;

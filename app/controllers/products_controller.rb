@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  def index    
+  def index
   end
 
   def show
@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
   def create
     @parents = Category.where(ancestry: nil)
     @product = Product.new(product_params)
+    @parents = Category.where(ancestry: nil)
     if @product.save
       redirect_to user_path(current_user.id), notice:"投稿完了"
     else
