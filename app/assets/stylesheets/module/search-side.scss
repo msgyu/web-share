@@ -3,9 +3,10 @@
   .search-side{
     min-height: 700px;
     background: #fff;
-    padding:20px 0 0 15px;
+    padding:20px 24px 0 24px;
     -webkit-box-shadow: #E8E8E8 0 4px 0;
     &_child{
+      width: 210px;
       &:not(:first-child){
         padding-top: 20px;
       }
