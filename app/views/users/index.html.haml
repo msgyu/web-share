@@ -1,8 +1,9 @@
 = render 'shared/main-header'
 .container-fluid
-  .row.py-5.w-100
+  .row.side
     = render 'shared/side'
-    .col-8.main
+  .row.main
+    .col-8
       %h2.main-h2 コラボ相手を探す
       %p 
         - if @users.nil?
