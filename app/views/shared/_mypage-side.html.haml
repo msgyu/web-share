@@ -35,3 +35,6 @@
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p お問い合わせ
+  %li.list-group-item
+    = link_to "", destroy_user_session_path, method: :delete,class: "nav-list__link"
+    %p ログアウト

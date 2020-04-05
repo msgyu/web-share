@@ -1,25 +1,25 @@
 = render 'shared/main-header'
 .container-fluid
-  .row.py-5.w-100
+  .row.side
     = render 'shared/side'
-    .col-8.main
-      .content-area
-        .user-title
-          %h2 
-            - if @user.title?
-              = @user.title
-            - else
-              %p タイトルは未設定です
-        - if @user.cando?
-          .user-content
-            %h3.h3-title できること
-            %p 
-              = @user.cando
-        - if @user.profile?
-          .user-content
-            %h3.h3-title プロフィール
-            %p
-              = @user.profile
+  .row.main
+    .content-area
+      .user-title
+        %h2 
+          - if @user.title?
+            = @user.title
+          - else
+            %p タイトルは未設定です
+      - if @user.cando?
+        .user-content
+          %h3.h3-title できること
+          %p 
+            = @user.cando
+      - if @user.profile?
+        .user-content
+          %h3.h3-title プロフィール
+          %p
+            = @user.profile
 
-      %h2.main-h2 プラン
-      = render partial: 'products/product', collection: @user.products, as: "product"
+    %h2.main-h2 プラン
+    = render partial: 'products/product', collection: @user.products, as: "product"

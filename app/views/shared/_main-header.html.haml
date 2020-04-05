@@ -2,9 +2,11 @@
   %ul.float-right
     - if user_signed_in?
       %li 
-        = link_to "マイページ", mypage_users_path(current_user.id), class:"btn login"
-      %li 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn login"
+        = link_to mypage_users_path(current_user.id) do
+          - if current_user.avatar.attached?
+            = image_tag url_for(current_user.avatar), class: "avatar"
+          - else
+            = image_tag "member_photo_noimage_thumb.png", class: "avatar"
       
     - else
       %li 
