@@ -34,18 +34,29 @@ class CreditcardsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    if @card.blank?
-      redirect_to action: "new"
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    unless @product.user == current_user
+      if @card.blank?
+        redirect_to action: "new"
+        flash[:alert] = '購入にはクレジットカード登録が必要です'
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        Payjp::Charge.create(
+        amount: @product.price,
+        customer: @card.customer_id,
+        currency: 'jpy',
+        )
+        @receipt = Receipt.create(
+          name: @product.name,
+          price: @product.price,
+          buyer_id: current_user.id
+          seller_id: @product.user.id
+          product_id: @product.id
+        )
+        flash[:notice] = '購入しました。'
+        redirect_to controller: 'products', action: 'show', id: @product.id
+      end
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      Payjp::Charge.create(
-      amount: @product.price,
-      customer: @card.customer_id,
-      currency: 'jpy',
-      )
-      flash[:notice] = '購入しました。'
-      redirect_to controller: 'products', action: 'show', id: @product.id
+      redirect_back(fallback_location: root_path)
     end
   end
 
