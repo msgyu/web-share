@@ -95,9 +95,10 @@ belongs_to :user
 ## receiptsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|-------|
+|name|string|null: false|
 |price|integer|-------|
-|user_id|references|foreign_key: true, null: false|
+|buyer_id|references|foreign_key: true, null: false|
+|seller_id|references|foreign_key: true, null: false|
 |product_id|references|foreign_key: true, null: false|
 
 ### Association
