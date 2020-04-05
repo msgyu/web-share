@@ -1,6 +1,7 @@
 .header {
   height: 63px;
   background: #fff;
+  margin: 0 24px;
   .btn{
     @include btn
     font-size: 12px;
