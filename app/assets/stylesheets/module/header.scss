@@ -3,6 +3,9 @@
   background: #fff;
   .btn{
     @include btn
+    font-size: 12px;
+    height: 37px;
+    line-height: 24px;
   }
   .registration{
     background: #13b1c0;
