@@ -46,6 +46,7 @@
 - has_many :followers, through: :follower_relationships
 - has_many :creditcards
 - has_many :sns_credentials, dependent: :destroy
+- has_many :receipts
 - belongs_to_active_hash :prefecture
 
 ## snsテーブル
@@ -90,6 +91,19 @@ belongs_to :user
 
 ### Association
 - belongs_to :user
+
+## receiptsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|-------|
+|price|integer|-------|
+|user_id|references|foreign_key: true, null: false|
+|product_id|references|foreign_key: true, null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
 
 
 ## addressesテーブル
@@ -136,7 +150,6 @@ belongs_to :user
 ### Association
 - has_many: sns
 - has_many: sns_product
-- belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - belongs_to :user
 - belongs_to :category
@@ -146,6 +159,7 @@ belongs_to :user
 - has_one :evaluations
 - has_many :likes
 - has_many :liked_users, through: :likes, source: :user
+- has_many :receipts
 - belongs_to :brand
 - belongs_to_active_hash :prefecture
 
