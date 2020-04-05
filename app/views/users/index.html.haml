@@ -3,15 +3,14 @@
   .row.side
     = render 'shared/side'
   .row.main
-    .col-8
-      %h2.main-h2 コラボ相手を探す
-      %p 
-        - if @users.nil?
-          = "クリエイターがみつからない時は募集してみよう！"
-        - else
-          = "#{@users.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
-      .jscroll
-        = render partial: 'user', collection: @users, as: "host", class: "jscroll"
-        .skill-list
-          = link_to_prev_page @users, '前のページ', class: "prev"
-          = link_to_next_page @users, '次のページ', class: "next"
+    %h2.main-h2 コラボ相手を探す
+    %p.main_search-text 
+      - if @users.nil?
+        = "クリエイターがみつからない時は募集してみよう！"
+      - else
+        = "#{@users.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
+    .jscroll
+      = render partial: 'user', collection: @users, as: "host", class: "jscroll"
+      .skill-list
+        = link_to_prev_page @users, '前のページ', class: "prev"
+        = link_to_next_page @users, '次のページ', class: "next"

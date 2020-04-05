@@ -1,9 +1,13 @@
 .main{
+  padding: 50px 10px 0 10px;
   float: left;
+  overflow: scroll;
+  width: calc(100% - 258px);
+  display: block;
   &-h2{
     font-size: 30px;
     color: $green;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     &.new{
       margin-top: 50px;
     }
