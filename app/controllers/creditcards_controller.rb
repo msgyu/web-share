@@ -48,8 +48,8 @@ class CreditcardsController < ApplicationController
         @receipt = Receipt.create(
           name: @product.name,
           price: @product.price,
-          buyer_id: current_user.id
-          seller_id: @product.user.id
+          buyer_id: current_user.id,
+          seller_id: @product.user.id,
           product_id: @product.id
         )
         flash[:notice] = '購入しました。'
