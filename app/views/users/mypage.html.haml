@@ -60,3 +60,5 @@
 
     %h2.main-h2 プラン
     = render partial: 'products/product', collection: current_user.products, as: "product"
+    .product
+      = link_to "新規プラン作成" , new_product_path, class:"product-btn active"

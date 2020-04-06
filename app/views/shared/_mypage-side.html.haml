@@ -2,9 +2,6 @@
   %li{class: "list-group-item #{active_class(mypage_users_path(current_user))}"}
     = link_to "", mypage_users_path(current_user), class: "nav-list__link"
     %p マイページ
-  %li{class: "list-group-item #{active_class(new_product_path)}"}
-    = link_to "", new_product_path, class: "nav-list__link"
-    %p コンテンツ
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p やることリスト
