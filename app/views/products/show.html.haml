@@ -1,40 +1,40 @@
 = render 'shared/main-header'
 .container-fluid
-  .row.py-5.w-100
+  .row.side
     = render 'shared/side'
-    .col-8.main
-      .info
-        .buy-info
-          %h3 プラン情報確認
-          %p 
-            = @product.name
-          %p
-            = "支払い金額  ¥#{@product.price}"
-          .buy-info_agree
-            - if @card.present?
-              = link_to buy_creditcards_path(product_id: @product.id), class:"buy-info_agree_btn" do
-                .text
-                  契約する
-            - else
-              .buy-info_agree_btn.none
-                .text
-                  契約するには支払い情報が必要です
-        .payment-info
-          %h3 決済方法の確認
-          %section
-            %h4 クレジットカード
-            - if @card.present?
-              %p.buy-user-info--text
-                = "**** **** **** " + @card_info.last4
-              %br
-              = @exp_month + " / " + @exp_year
-              %br
-              = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
-              .buy-info__user--fix 
-                = link_to '変更する', creditcards_path
-                = fa_icon 'chevron-right'
-            - else
-              .new-card
-                = link_to new_creditcard_path, class:"new-card-btn" do
-                  %i.far.fa-credit-card 
-                  クレジットカードを追加する
+  .row.main
+    .info
+      .buy-info
+        %h3 プラン情報確認
+        %p 
+          = @product.name
+        %p
+          = "支払い金額  ¥#{@product.price}"
+        .buy-info_agree
+          - if @card.present?
+            = link_to buy_creditcards_path(product_id: @product.id), class:"buy-info_agree_btn" do
+              .text
+                契約する
+          - else
+            .buy-info_agree_btn.none
+              .text
+                契約するには支払い情報が必要です
+      .payment-info
+        %h3 決済方法の確認
+        %section
+          %h4 クレジットカード
+          - if @card.present?
+            %p.buy-user-info--text
+              = "**** **** **** " + @card_info.last4
+            %br
+            = @exp_month + " / " + @exp_year
+            %br
+            = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
+            .buy-info__user--fix 
+              = link_to '変更する', creditcards_path
+              = fa_icon 'chevron-right'
+          - else
+            .new-card
+              = link_to new_creditcard_path, class:"new-card-btn" do
+                %i.far.fa-credit-card 
+                クレジットカードを追加する
