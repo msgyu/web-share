@@ -93,7 +93,7 @@
         }
       }
       &-details {
-        padding: 40px;
+        margin-top: 40px;
         border-top: 1px solid $border-top-gray;
         display: flex;
         h3 {
@@ -103,7 +103,7 @@
           margin-right: auto;
         }
         &__form-box {
-          width: 400px;
+          width: 100%;
           margin: 0;
           &__category, &__brand {
             @include label;
