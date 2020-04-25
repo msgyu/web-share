@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @products = Product.order(created_at: "DESC").includes(:user).page(params[:page]).without_count.per(5)
+    @users = User.order(created_at: "DESC").page(params[:page]).without_count.per(5).joins(:products).preload(:products).distinct
   end
 
   def new
