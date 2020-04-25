@@ -16,7 +16,7 @@
       - elsif @search_users.present?
         = "「#{params[:q][:nickname_or_title_or_profile_or_cando_cont]}」の検索結果: #{@search_users.count}人のクリエイターがみつかりました。コラボを依頼しよう！"
         .jscroll
-          = render partial: 'user', collection: @search_user, as: "host", class: "jscroll"
+          = render partial: 'user', collection: @search_users, as: "host", class: "jscroll"
           .skill-list
             = link_to_prev_page @search_users, '前のページ', class: "prev"
             = link_to_next_page @search_users, '次のページ', class: "next"
