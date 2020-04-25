@@ -3,7 +3,7 @@
     %p 条件で絞り込む
     .search_wap
       = search_form_for @search, url: search_users_path do |f|
-        = f.text_field :name_cont , placeholder: "何かお探しですか？", class: 'input'
+        = f.text_field :nickname_or_title_or_profile_or_cando_cont , placeholder: "何かお探しですか？", class: 'input'
         = button_tag type: 'submit', class: 'search__button' do
           .icon_wap
             %i.fas.fa-search
