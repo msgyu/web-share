@@ -9,14 +9,14 @@
         = "検索キーワードがありません。"
         %h2.main-h2.new 新着一覧
         .jscroll
-          = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+          = render partial: 'user', collection: @users, as: "host", class: "jscroll"
           .skill-list
-            = link_to_prev_page @products, '前のページ', class: "prev"
-            = link_to_next_page @products, '次のページ', class: "next"
+            = link_to_prev_page @users, '前のページ', class: "prev"
+            = link_to_next_page @users, '次のページ', class: "next"
       - elsif @search_users.present?
         = "「#{params[:q][:name_cont]}」の検索結果: #{@search_users.count}人のクリエイターがみつかりました。コラボを依頼しよう！"
         .jscroll
-          = render partial: 'user', collection: @search_user, as: "product", class: "jscroll"
+          = render partial: 'user', collection: @search_user, as: "host", class: "jscroll"
           .skill-list
             = link_to_prev_page @search_users, '前のページ', class: "prev"
             = link_to_next_page @search_users, '次のページ', class: "next"
@@ -24,7 +24,7 @@
         = "「#{params[:q][:name_cont]}」の検索結果: #{@search_users.count}人。クリエイターがみつからない時は募集してみよう！"
         %h2.main-h2.new 新着一覧
         .jscroll
-          = render partial: 'user', collection: @products, as: "product", class: "jscroll"
+          = render partial: 'user', collection: @users, as: "host", class: "jscroll"
           .skill-list
-            = link_to_prev_page @products, '前のページ', class: "prev"
-            = link_to_next_page @products, '次のページ', class: "next"
+            = link_to_prev_page @users, '前のページ', class: "prev"
+            = link_to_next_page @users, '次のページ', class: "next"
