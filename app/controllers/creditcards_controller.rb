@@ -50,7 +50,8 @@ class CreditcardsController < ApplicationController
           price: @product.price,
           buyer_id: current_user.id,
           seller_id: @product.user.id,
-          product_id: @product.id
+          product_id: @product.id,
+          status: 'tradding'
         )
         flash[:notice] = '購入しました。'
         redirect_to controller: 'products', action: 'show', id: @product.id
