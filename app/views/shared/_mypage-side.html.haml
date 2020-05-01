@@ -8,14 +8,11 @@
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p いいね！一覧
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 評価一覧
   %li{class: "list-group-item #{active_class(creditcards_path)}"}
     = link_to "", creditcards_path, class: "nav-list__link"
     %p 支払い方法の登録
-  %li{class: "list-group-item #{active_class(recipts_path)}"}
-    = link_to "", recipts_path,class: "nav-list__link"
+  %li{class: "list-group-item #{active_class(receipts_path)}"}
+    = link_to "", receipts_path,class: "nav-list__link"
     %p 取引・売上履歴
   %li.list-group-item
     = link_to "", class: "nav-list__link"
