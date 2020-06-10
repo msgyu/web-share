@@ -4,7 +4,7 @@ class CreditcardsController < ApplicationController
 
   def index
     if @card.present?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:private_key]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_info = customer.cards.retrieve(customer.default_card)
       @card_brand = @card_info.brand
@@ -39,7 +39,7 @@ class CreditcardsController < ApplicationController
         redirect_to action: "new"
         flash[:alert] = '購入にはクレジットカード登録が必要です'
       else
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        Payjp.api_key = Rails.application.credentials.payjp[:private_key]
         Payjp::Charge.create(
         amount: @product.price,
         customer: @card.customer_id,
@@ -63,7 +63,7 @@ class CreditcardsController < ApplicationController
 
   
   def create
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:private_key]
     if params['payjpToken'].blank?
       render "new"
     else
@@ -87,7 +87,7 @@ class CreditcardsController < ApplicationController
   end
 
   def destroy     
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:private_key]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy
