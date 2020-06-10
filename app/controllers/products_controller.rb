@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  def index    
+  def index
   end
 
   def show
@@ -54,6 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @parents = Category.where(ancestry: nil)
     @product = Product.new(product_params)
     @parents = Category.where(ancestry: nil)
     if @product.save

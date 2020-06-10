@@ -18,6 +18,8 @@
 @import "./products/new";
 @import "./products/product";
 @import "./products/buy";
+@import "receipts/index";
+
 .row{
   margin: 0;
 }
@@ -28,6 +30,8 @@ html{
 
 .container-fluid{
   background: #F4F8F9;
+  margin: 0;
+  padding: 0;
 }
 
 

@@ -2,36 +2,24 @@
   %li{class: "list-group-item #{active_class(mypage_users_path(current_user))}"}
     = link_to "", mypage_users_path(current_user), class: "nav-list__link"
     %p マイページ
-  %li{class: "list-group-item #{active_class(new_product_path)}"}
-    = link_to "", new_product_path, class: "nav-list__link"
-    %p コンテンツ
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p やることリスト
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p いいね！一覧
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 取引依頼
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 取引中
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 過去の取引
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 評価一覧
   %li{class: "list-group-item #{active_class(creditcards_path)}"}
     = link_to "", creditcards_path, class: "nav-list__link"
     %p 支払い方法の登録
-  %li.list-group-item
-    = link_to "", class: "nav-list__link"
-    %p 売上・振込申請
+  %li{class: "list-group-item #{active_class(receipts_path)}"}
+    = link_to "", receipts_path,class: "nav-list__link"
+    %p 取引・売上履歴
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p ニュース一覧
   %li.list-group-item
     = link_to "", class: "nav-list__link"
     %p お問い合わせ
+  %li.list-group-item
+    = link_to "", destroy_user_session_path, method: :delete,class: "nav-list__link"
+    %p ログアウト

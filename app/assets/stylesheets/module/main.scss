@@ -1,8 +1,15 @@
+.center-area{
+  margin: 0 auto;
+}
 .main{
+  padding: 36px 24px;
+  overflow: scroll;
+  width: calc(100% - 258px);
+  display: block;
   &-h2{
     font-size: 30px;
     color: $green;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     &.new{
       margin-top: 50px;
     }
@@ -92,6 +99,17 @@
         font-weight: 700;
         margin: 10px 0;
         
+      }
+      &_sns{
+        .sns-ul{
+          .sns-ul_li{
+            display: inline-block;
+            .youtube{
+              color: red;
+            }
+          }
+        }
+
       }
       &_score{
         font-size: 13px;

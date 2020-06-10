@@ -68,11 +68,19 @@
     .h3-title{
       font-size: 18px;
       color: #13b1c0;
-
     }
     &:not(:first-child){
       .h3-title{
         margin-top: 50px;
+      }
+    }
+    .sns-ul{
+      &_li{
+        display: block;
+
+      }
+      .youtube {
+        color: red;
       }
     }
   }

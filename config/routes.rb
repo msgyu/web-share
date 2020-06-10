@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
+  resources :receipts, only: :index
 
   resources :products do
     collection do

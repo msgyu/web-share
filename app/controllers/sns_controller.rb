@@ -17,8 +17,6 @@ class SnsController < ApplicationController
   def create
     @sns = Sn.new(sns_params)
     if @sns.save
-      binding.pry 
-      @sns.mechanize
       redirect_to mypage_users_path, notice:"投稿完了"
     else
       render "new"

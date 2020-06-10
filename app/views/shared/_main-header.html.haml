@@ -1,19 +1,19 @@
-.header.clearfix.px-5.mx-3
+.header.clearfix
   %ul.float-right
     - if user_signed_in?
       %li 
-        = link_to "マイページ", mypage_users_path(current_user.id), class:"btn login"
-      %li 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn login"
+        = link_to mypage_users_path(current_user.id) do
+          - if current_user.avatar.attached?
+            = image_tag url_for(current_user.avatar), class: "avatar"
+          - else
+            = image_tag "member_photo_noimage_thumb.png", class: "avatar"
       
     - else
       %li 
-        = link_to "ログイン", new_user_session_path, class:"btn login"
-      %li
-        = link_to "新規登録", registration_users_path, class:"btn registration"
+        = link_to "ログイン/新規登録", new_user_session_path, class:"btn login"
   .search_wap
     = search_form_for @search, url: search_users_path do |f|
-      = f.text_field :name_cont , placeholder: "何かお探しですか？", class: 'input'
+      = f.text_field :nickname_or_title_or_profile_or_cando_cont , placeholder: "何かお探しですか？", class: 'input'
       = button_tag type: 'submit', class: 'search__button' do
         .icon_wap
           %i.fas.fa-search

@@ -1,16 +1,16 @@
 = render 'shared/main-header'
 .container-fluid
-  .row.py-5.w-100
+  .row.side
     = render 'shared/side'
-    .col-8.main
-      %h2.main-h2 コラボ相手を探す
-      %p 
-        - if @users.nil?
-          = "クリエイターがみつからない時は募集してみよう！"
-        - else
-          = "#{@users.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
-      .jscroll
-        = render partial: 'user', collection: @users, as: "host", class: "jscroll"
-        .skill-list
-          = link_to_prev_page @users, '前のページ', class: "prev"
-          = link_to_next_page @users, '次のページ', class: "next"
+  .row.main
+    %h2.main-h2 コラボ相手を探す
+    %p.main_search-text 
+      - if @users.nil?
+        = "クリエイターがみつからない時は募集してみよう！"
+      - else
+        = "#{@users.count}人のクリエイターがみつかりました。クリエイターがみつからない時は募集してみよう！"
+    .jscroll
+      = render partial: 'user', collection: @users, as: "host", class: "jscroll"
+      .skill-list
+        = link_to_prev_page @users, '前のページ', class: "prev"
+        = link_to_next_page @users, '次のページ', class: "next"

@@ -12,7 +12,7 @@
                 = image_tag url_for(current_user.avatar)
               - else 
                 = image_tag "member_photo_noimage_thumb.png"
-              = f.file_field :avatar, class: "avatar-uplode_form"
+              = f.file_field :avatar, accept: "image/png, image/jpeg", class: "avatar-uplode_form"
               .avatar-uplode_edit
                 %p 編集
             .user-name

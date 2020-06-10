@@ -1,49 +1,64 @@
 = render 'shared/main-header'
 .container-fluid
-  .row.py-5.w-100
+  .row.side
     = render 'shared/mypage-side'
-    .col-8.main
-      .content-area
-        .user-title
-          = link_to "編集", edit_user_registration_path, class: "edit-btn"
-          %h2 
-            - unless current_user.title.nil?
-              = current_user.title
-            - else
-              %p こちらにタイトルが表示されます。
-        .user-content
-          %h3.h3-title できること
-          %p 
-            - if current_user.cando?
-              = current_user.cando
-            - else
-              %p あなたが提供できることについて、説明してください。
-        .user-content
-          %h3.h3-title プロフィール
-          %p
-            - if current_user.profile?
-              = current_user.profile
-            - else
-              %p プロフィールを設定してください。
+  .row.main
+    .content-area
+      .user-title
+        = link_to "編集", edit_user_registration_path, class: "edit-btn"
+        %h2 
+          - unless current_user.title.nil?
+            = current_user.title
+          - else
+            %p こちらにタイトルが表示されます。
+      .user-content
+        %h3.h3-title できること
+        %p 
+          - if current_user.cando?
+            = current_user.cando
+          - else
+            %p あなたが提供できることについて、説明してください。
+      .user-content
+        %h3.h3-title プロフィール
+        %p
+          - if current_user.profile?
+            = current_user.profile
+          - else
+            %p プロフィールを設定してください。
 
-        .user-content
-          %h3.h3-title SNS
-          = link_to "Youtube", ""
-          %p 登録者数: 1000人
-          %p 男性: 20代 30代 40代 50代
-          %p 女性: 30代
-          %ul
-            - current_user.sns.each do |sns|
-              = link_to "#{sns.kind}", "#{sns.url}", target: :_blank
-          = form_with model: @sn do |f|
-            = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["ブログ・WEBサイト"], ["Tik Tok"] ]
-            = f.text_field :url, placeholder: "URLを入力"
-            = f.submit "登録完了", class: "btn"
-          
-        .user-content
-          %h3.h3-title 視聴者層
-          %p 男性: 20代 30代 40代 50代
-          %p 女性: 30代
+      .user-content
+        %h3.h3-title SNS
+        %ul.sns-ul
+          - current_user.sns.each do |sns|
+            %li.sns-ul_li
+              = link_to "#{sns.url}", target: :_blank do
+                - if sns.kind == "Youtube"
+                  %i.fab.fa-youtube.youtube
+                - if sns.kind == "instagram"
+                  %i.fab.fa-instagram.instagram
+                - if sns.kind == "Twitter"
+                  %i.fab.fa-twitter.twitter
+                - if sns.kind == "Facebook"
+                  %i.fab.fa-facebook.facebook
+                - if sns.kind == "Tik Tok"
+                  = "#{sns.kind}"
+                - if sns.kind == "ブログ・WEBサイト"
+                  = "#{sns.kind}"
+                - unless sns.kind.in?(["Tik Tok","ブログ・WEBサイト"])
+                  = sns.kind
+              = link_to sn_path(sns.id), method: :delete, data: {confirm: "削除しますか？"}, class:"btn" do
+                %i.far.fa-times-circle
+        = form_with model: @sn do |f|
+          = f.select :kind, [["SNSを選択", ""], ["Youtube"],["instagram"], ["Twitter"], ["Facebook"], ["Tik Tok"], ["ブログ・WEBサイト"]]
+          = f.text_field :url, placeholder: "URLを入力"
+          = f.submit "登録完了", class: "btn"
+        
+      .user-content
+        %h3.h3-title 視聴者層
+        %p 男性: 20代 30代 40代 50代
+        %p 女性: 30代
 
-      %h2.main-h2 プラン
-      = render partial: 'products/product', collection: current_user.products, as: "product"
+    %h2.main-h2 プラン
+    = render partial: 'products/product', collection: current_user.products, as: "product"
+    .product
+      = link_to "新規プラン作成" , new_product_path, class:"product-btn active"
