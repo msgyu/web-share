@@ -4,7 +4,8 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential \ 
                       libpq-dev \
                       git \
-                      vim
+                      vim \
+                      nginx
 #yarnのインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
