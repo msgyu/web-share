@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :sold_receipts, class_name: "Receipt", foreign_key: "seller_id"
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+         
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /\A\d{11}\z/
 end
