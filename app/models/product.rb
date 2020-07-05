@@ -6,7 +6,11 @@ class Product < ApplicationRecord
   has_many :sns, through: :sns_product
   has_many :sns_product
 
-
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :period,      presence: true
+  validates :price,       presence: true
+  validates :user_id,     presence: true
   validate :category_count
     def category_count
       category_validation = category_ids
