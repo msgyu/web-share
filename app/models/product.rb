@@ -6,11 +6,14 @@ class Product < ApplicationRecord
   has_many :sns, through: :sns_product
   has_many :sns_product
 
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :period,      presence: true
-  validates :price,       presence: true
-  validates :user_id,     presence: true
+  validates :name, :description, :period, :user_id, :price, presence: true
+  validates :price,numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1000,
+    less_than_or_equal_to: 999999,
+    allow_blank: true
+  }
+
   validate :category_count
     def category_count
       category_validation = category_ids
