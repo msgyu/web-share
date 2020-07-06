@@ -3,6 +3,9 @@ ja:
     models:
       user: ユーザー
       product: プラン
+      receipt: 購入履歴
+      creditcard: クレジットカード
+      sn: SNS
     attributes:
       user:
         nickname: ニックネーム
@@ -42,3 +45,10 @@ ja:
         seller_id: 販売者ID
         product_id: 商品ID
         status: ステータス
+      creditcard:
+        user_id: ユーザーID
+        customer_id: カスタマーID
+      sn:
+        kind: 種類
+        url: url
+        user_id: ユーザーID
