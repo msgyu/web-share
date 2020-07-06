@@ -3,6 +3,8 @@ class Sn < ApplicationRecord
   has_many :product, through: :sns_product
   has_many :sns_product
 
+  validates :user_id, :kind, :url, presence: true
+
   def mechanize
     require 'mechanize'
     agent = Mechanize.new
