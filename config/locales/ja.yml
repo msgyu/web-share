@@ -31,3 +31,7 @@ ja:
         building_name: 建物名
         address_phone_number: 電話
       product:
+        name: 商品名
+        ddescription: 商品説明
+        period: コラボまでの日数
+        price: 金額
