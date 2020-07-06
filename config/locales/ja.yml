@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      product: プラン
     attributes:
       user:
         nickname: ニックネーム
@@ -14,11 +15,10 @@ ja:
         birth_month: 生年月日
         birth_day: 生年月日
         phone_number: 電話番号
-        # postalcode:
-        # city_name:
-        # address_number:
-        # building_name:
-        # address_phone_number:
+        postalcode: 郵便番号
+        city_name: 市区町村
+        address_number: 番地
+        building_name: 建物名
       address:
         address_firstname: 姓
         address_lastname: 名
@@ -30,3 +30,4 @@ ja:
         address_number: 番地
         building_name: 建物名
         address_phone_number: 電話
+      product:
