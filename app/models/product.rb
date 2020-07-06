@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   has_many :sns_product
 
   validates :name, :description, :period, :user_id, :price, presence: true
+  validates :name, length: { maximum: 40 }
+  validates :description, length: { maximum: 300 }
   validates :price,numericality: {
     only_integer: true,
     greater_than_or_equal_to: 1000,
