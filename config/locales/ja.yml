@@ -35,3 +35,10 @@ ja:
         ddescription: 商品説明
         period: コラボまでの日数
         price: 金額
+      receipt:
+        name: 商品名
+        price: 金額
+        buyer_id: 購入者ID
+        seller_id: 販売者ID
+        product_id: 商品ID
+        status: ステータス
