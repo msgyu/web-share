@@ -34,16 +34,17 @@
     color: #13b1c0;
     margin: 0;
   }
-  .notifications {
-    color: $white;
-    text-align: center;
+}
 
-    .notice {
-      background-color: lightBlue;
-    }
+.notifications {
+  color: $white;
+  text-align: center;
 
-    .alert {
-      background-color: alert_orange;
-    }
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: alert_orange;
   }
 }
