@@ -2,19 +2,18 @@
   height: 63px;
   background: #fff;
   margin: 0 24px;
-  .btn{
-    @include btn
-    font-size: 12px;
+  .btn {
+    @include btn font-size: 12px;
     height: 37px;
     line-height: 24px;
   }
-  .registration{
+  .registration {
     background: #13b1c0;
     color: #fff;
   }
-  ul{
+  ul {
     line-height: 63px;
-    li{
+    li {
       .avatar {
         border-radius: 50%;
         width: 37px;
@@ -23,16 +22,28 @@
       display: inline-block;
     }
   }
-  .search_wap{
+  .search_wap {
     @include search_wap;
     float: right;
   }
-  .logo{
+  .logo {
     line-height: 63px;
     font-size: 25px;
     font-weight: bold;
     margin-left: 10px;
     color: #13b1c0;
     margin: 0;
+  }
+  .notifications {
+    color: $white;
+    text-align: center;
+
+    .notice {
+      background-color: lightBlue;
+    }
+
+    .alert {
+      background-color: alert_orange;
+    }
   }
 }
