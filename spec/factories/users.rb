@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user, class: User do
+  factory :user do
     sequence(:nickname)                  { Faker::Name.name }
     sequence(:email)                     { Faker::Internet.email}
     sequence(:password)                  {Faker::Internet.password(min_length: 8)}
