@@ -3,7 +3,8 @@
   background: #fff;
   margin: 0 24px;
   .btn {
-    @include btn font-size: 12px;
+    @include btn;
+    font-size: 12px;
     height: 37px;
     line-height: 24px;
   }
