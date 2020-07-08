@@ -36,4 +36,9 @@ describe User do
       user.valid?
       expect(user.errors[:lastname_kana]).to include("を入力してください")
     end
+    it "is invalid without a birth_year" do
+      user.build(:user, birth_year: nil)
+      user.valid?
+      expect(user.errors[:lastname_kana]).to include("を入力してください")
+    end
 end
