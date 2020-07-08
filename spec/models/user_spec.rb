@@ -58,12 +58,12 @@ describe User do
     end
 
     #valid that column characters less
-    it "is invalid without a nickname that has more than 20 characters" do
+    it "is invalid without a nickname that has less than 20 characters" do
       user = build(:user, nickname: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
     end
-    it "is invalid without a firstname that has more than 35 characters" do
+    it "is invalid without a firstname that has less thann 35 characters" do
       user = build(:user, firstname: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
