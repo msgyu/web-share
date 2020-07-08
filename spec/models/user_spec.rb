@@ -66,5 +66,9 @@ describe User do
       user.valid?
       expect(user.errors[:firstname]).to include("は35文字以内に入力してください")
     end
-    
+    it "is invalid without a lastname that has more than 35 characters"
+      user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user.errors[:lastname]).to include("は35文字以内に入力してください")
+    end
 end
