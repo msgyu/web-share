@@ -25,5 +25,9 @@ describe User do
       user.build(:user, lastname: nil)
       user.valid?
       expect(user.errors[:lastname]).to include("を入力してください")
-  end
+    end
+    it "is invalid without a firstname_kana" do
+      user.build(:user, firstname_kana: nil)
+      user.valid?
+      expect(user.errors[:firstname_kana]).to include("を入力してください")
 end
