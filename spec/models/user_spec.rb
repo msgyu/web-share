@@ -16,5 +16,14 @@ describe User do
       user.valid?
       expect(user.errors[:email]).to include("を入力してください")
     end
+    it "is invalid without a firstname" do
+      user.build(:user, firstname: nil)
+      user.valid?
+      expect(user.errors[:firstname]).to include("を入力してください")
+    end
+    it "is invalid without a lastname" do
+      user.build(:user, lastname: nil)
+      user.valid?
+      expect(user.errors[:lastname]).to include("を入力してください")
   end
 end
