@@ -56,6 +56,35 @@ describe User do
       user.valid?
       expect(user.errors[:phone_number]).to include("を入力してください")
     end
+
+    #valid that column characters less
+    it "is invalid without a nickname that has more than 20 characters" do
+      user = build(:user, nickname: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "is invalid without a firstname that has more than 35 characters" do
+      user = build(:user, firstname: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "is invalid without a lastname that has more than 35 characters"
+      user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "is invalid without a firstname_kana that has more than 35 characters" do
+      user = build(:user, firstname_kana: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "is invalid without a lastname_kana that has more than 35 characters" do
+      user = build(:user, lastname_kana: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+
+    #invalid that column characters more
     it "is invalid without a nickname that has more than 20 characters" do
       user = build(:user, nickname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
