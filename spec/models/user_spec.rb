@@ -56,4 +56,9 @@ describe User do
       user.valid?
       expect(user.errors[:phone_number]).to include("を入力してください")
     end
+    it "is invalid without a nickname that has more than 20 characters" do
+      user = build(:user, nickname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user.errors[:nickname]).to include("は20文字以内に入力してください")
+    end
 end
