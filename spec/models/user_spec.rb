@@ -51,5 +51,9 @@ describe User do
       user.valid?
       expect(user.errors[:birth_day]).to include("を入力してください")
     end
-    
+    it "is invalid without a phone_number" do
+      user.build(:user, phone_number: nil)
+      user.valid?
+      expect(user.errors[:phone_number]).to include("を入力してください")
+    end
 end
