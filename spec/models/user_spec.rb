@@ -68,18 +68,23 @@ describe User do
       user.valid?
       expect(user).to be_valid
     end
-    it "is invalid without a lastname that has more than 35 characters"
+    it "is invalid without a lastname that has less than 35 characters"
       user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
     end
-    it "is invalid without a firstname_kana that has more than 35 characters" do
+    it "is invalid without a firstname_kana that has less than 35 characters" do
       user = build(:user, firstname_kana: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
     end
-    it "is invalid without a lastname_kana that has more than 35 characters" do
+    it "is invalid without a lastname_kana that has less than 35 characters" do
       user = build(:user, lastname_kana: "aaaaaaaaa!aaaaaaaaa!")
+      user.valid?
+      expect(user).to be_valid
+    end
+    it "is valid with a phone_number that has less than 11 characters " do
+      user = build(:user, phone_number: "11111111111")
       user.valid?
       expect(user).to be_valid
     end
