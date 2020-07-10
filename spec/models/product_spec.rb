@@ -24,7 +24,12 @@ describe Product do
       product.valid?
       expect(product.errors[:period]).to include("を入力してください")
     end
-
+    
+    it "is invalid without a price" do
+      product.build(:product, price: nil)
+      product.valid?
+      expect(product.errors[:price]).to include("を入力してください")
+    end
 
   end
 end
