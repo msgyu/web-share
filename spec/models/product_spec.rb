@@ -48,5 +48,11 @@ describe Product do
       expect(product).to be_valid
     end
 
+    it "is invalid with a description that has less than 300 characters" do
+      product.build(:product, description: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
+      product.valid?
+      expect(product.errors[:description]).to include("は300文字以内に入力してください")
+    end
+
   end
 end
