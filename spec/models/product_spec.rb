@@ -19,5 +19,12 @@ describe Product do
       expect(product.errors[:description]).to include("を入力してください")
     end
 
+    it "is invalid without a period" do
+      product.build(:product, period: nil)
+      product.valid?
+      expect(product.errors[:period]).to include("を入力してください")
+    end
+
+
   end
 end
