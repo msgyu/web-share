@@ -115,5 +115,10 @@ describe User do
       user.valid?
       expect(user.errors[:lasttname_kana]).to include("は35文字以内に入力してください")
     end
-
+    it "is invalid with a duplicate phone_number address" do
+      user = create(:user)
+      another_user = build(:user, phone_number: user.phone_number)
+      another_user.valid?
+      expect(another_user.errors[:phone_number]).to include("はすでに存在します")
+    end
 end
