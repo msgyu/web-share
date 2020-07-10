@@ -31,7 +31,12 @@ describe Product do
       expect(product.errors[:price]).to include("を入力してください")
     end
 
-    it "is invalid with a name that more than 40 characters" do
+    it "is valid with a name that has less than 40 characters" do
+      product.build(:product, name: "aaaaaaaaa!aaaaaaaaa!")
+      product.valid?
+      expect(product.errors[:name]).to include("は40文字以内に入力してください")
+    end
+    it "is invalid with a name that has more than 40 characters" do
       product.build(:product, name: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       product.valid?
       expect(product.errors[:name]).to include("は40文字以内に入力してください")
