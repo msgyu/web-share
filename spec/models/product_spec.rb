@@ -42,5 +42,11 @@ describe Product do
       expect(product.errors[:name]).to include("は40文字以内に入力してください")
     end
 
+    it "is valid with a description that has less than 40 characters" do
+      product.build(:product, description: "aaaaaaaaa!aaaaaaaaa!")
+      product.valid?
+      expect(product).to be_valid
+    end
+
   end
 end
