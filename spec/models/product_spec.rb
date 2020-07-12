@@ -54,5 +54,11 @@ describe Product do
       expect(product.errors[:description]).to include("は300文字以内に入力してください")
     end
 
+    it "is invalid with price for text" do
+      product.build(:product, price: "aaaaa")
+      product.valid?
+      expect(product.errors[:price]).to include("")
+    end
+
   end
 end
