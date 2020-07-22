@@ -32,3 +32,5 @@ ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 RUN gem install bundler -v 2.1.4
 RUN bundle install
 ADD . $APP_ROOT
+
+CMD ["rails", "server", "-b", "0.0.0.0"]    
