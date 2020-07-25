@@ -4,13 +4,7 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential \ 
     libpq-dev \
     git \
-    vim \
-    locales \
-    locales-all \
-    mysql-client \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
+    vim 
 #yarnのインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
@@ -32,5 +26,3 @@ ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 RUN gem install bundler -v 2.1.4
 RUN bundle install
 ADD . $APP_ROOT
-
-CMD ["rails", "server", "-b", "0.0.0.0"]    
