@@ -6,35 +6,39 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
     ports:
-      - "4306:3306"
+      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/webapp
+      - public-data:/webapp/public
+      - tmp-data:/webapp/tmp
+      - log-data:/webapp/log
+      - gem_data:/usr/local/bundle
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
 
   nginx:
     build:
       context: containers/nginx
     volumes:
-      - public-data:/app_name/public
-      - tmp-data:/app_name/tmp
+      - public-data:/webapp/public
+      - tmp-data:/webapp/tmp
     ports:
       - 80:80
     depends_on:
-      - web
+      - app
 
-  web:
-    build: .
-    command: bundle exec puma -C config/puma.rb
-    volumes:
-      - .:/app_name
-      - gem_data:/usr/local/bundle
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    tty: true
-    stdin_open: true
 volumes:
   mysql_data:
   gem_data:
   public-data:
   tmp-data:
+  log-data:
