@@ -6,51 +6,61 @@ describe User do
       user = build(:user)
       expect(user).to be_valid
     end
+
     it "is invalid without a nickname" do
       user.build(:user, nickname: nil)
       user.valid?
       expect(user.errors[:nickname]).to include("を入力してください")
     end
+
     it "is invalid without a email" do
       user.build(:user, email: nil)
       user.valid?
       expect(user.errors[:email]).to include("を入力してください")
     end
+
     it "is invalid without a firstname" do
       user.build(:user, firstname: nil)
       user.valid?
       expect(user.errors[:firstname]).to include("を入力してください")
     end
+
     it "is invalid without a lastname" do
       user.build(:user, lastname: nil)
       user.valid?
       expect(user.errors[:lastname]).to include("を入力してください")
     end
+
     it "is invalid without a firstname_kana" do
       user.build(:user, firstname_kana: nil)
       user.valid?
       expect(user.errors[:firstname_kana]).to include("を入力してください")
     end
+
     it "is invalid without a lastname_kana" do
       user.build(:user, lastname_kana: nil)
       user.valid?
       expect(user.errors[:lastname_kana]).to include("を入力してください")
     end
+
     it "is invalid without a birth_year" do
       user.build(:user, birth_year: nil)
       user.valid?
       expect(user.errors[:lastname_kana]).to include("を入力してください")
     end
+
     it "is invalid without a birth_month" do
       user.build(:user, birth_month: nil) 
       user.valid?
       expect(user.errors[:birth_month]).to include("を入力してください")
     end
+
     it "is invalid without a birth_day" do
       user.build(:user, birth_day: nil)
       user.valid?
       expect(user.errors[:birth_day]).to include("を入力してください")
     end
+
     it "is invalid without a phone_number" do
       user.build(:user, phone_number: nil)
       user.valid?
@@ -63,16 +73,19 @@ describe User do
       user.valid?
       expect(user).to be_valid
     end
+
     it "is invalid without a firstname that has less thann 35 characters" do
       user = build(:user, firstname: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
     end
-    it "is invalid without a lastname that has less than 35 characters"
+
+    it "is invalid without a lastname that has less than 35 characters" do
       user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user).to be_valid
     end
+
     it "is invalid without a firstname_kana that has less than 35 characters" do
       user = build(:user, firstname_kana: "aaaaaaaaa!aaaaaaaaa!")
       user.valid?
@@ -100,7 +113,7 @@ describe User do
       user.valid?
       expect(user.errors[:firstname]).to include("は35文字以内に入力してください")
     end
-    it "is invalid with a lastname that has more than 35 characters"
+    it "is invalid with a lastname that has more than 35 characters" do
       user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
       expect(user.errors[:lastname]).to include("は35文字以内に入力してください")
