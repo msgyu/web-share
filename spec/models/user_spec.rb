@@ -121,4 +121,5 @@ describe User do
       another_user.valid?
       expect(another_user.errors[:phone_number]).to include("はすでに存在します")
     end
+  end
 end
