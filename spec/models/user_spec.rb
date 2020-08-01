@@ -106,27 +106,27 @@ RSpec.describe User, type: :model do
     it "is invalid with a nickname that has more than 20 characters" do
       user = build(:user, nickname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
-      expect(user.errors[:nickname]).to include("は20文字以内に入力してください")
+      expect(user.errors[:nickname]).to include("は20文字以内で入力してください")
     end
     it "is invalid with a firstname that has more than 35 characters" do
       user = build(:user, firstname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
-      expect(user.errors[:firstname]).to include("は35文字以内に入力してください")
+      expect(user.errors[:firstname]).to include("は35文字以内で入力してください")
     end
     it "is invalid with a lastname that has more than 35 characters" do
       user = build(:user, lastname: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
-      expect(user.errors[:lastname]).to include("は35文字以内に入力してください")
+      expect(user.errors[:lastname]).to include("は35文字以内で入力してください")
     end
     it "is invalid with a firstname_kana that has more than 35 characters" do
       user = build(:user, firstname_kana: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
-      expect(user.errors[:firstname_kana]).to include("は35文字以内に入力してください")
+      expect(user.errors[:firstname_kana]).to include("は35文字以内で入力してください")
     end
     it "is invalid with a lastname_kana that has more than 35 characters" do
       user = build(:user, lastname_kana: "aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!aaaaaaaaa!")
       user.valid?
-      expect(user.errors[:lasttname_kana]).to include("は35文字以内に入力してください")
+      expect(user.errors[:lasttname_kana]).to include("は35文字以内で入力してください")
     end
     it "is invalid with a duplicate phone_number address" do
       user = create(:user)
