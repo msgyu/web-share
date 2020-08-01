@@ -23,5 +23,4 @@ class User < ApplicationRecord
   validates :birth_month,       presence: true
   validates :birth_day,         presence: true
   validates :phone_number,      presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
-
 end
