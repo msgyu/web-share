@@ -17,7 +17,8 @@
       = button_tag type: 'submit', class: 'search__button' do
         .icon_wap
           %i.fas.fa-search
-  = link_to "WEBSHARE", root_path, class:"logo"
+  = link_to root_path, class:"logo" do
+    = "WEBSHARE"
 .notifications
   - flash.each do |key, value|
     = content_tag(:div, value, class: key)

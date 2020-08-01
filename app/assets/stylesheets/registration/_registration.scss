@@ -1,4 +1,4 @@
-.registration-container{
+.registration-container {
   width: 665px;
   margin: 0 auto;
   background: #fff;
@@ -6,18 +6,20 @@
   text-align: center;
   color: #878787;
   font-size: 15px;
-  h1{
+  h1 {
     text-align: center;
     color: $green;
     font-size: 35px;
     height: 60px;
     line-height: 60px;
   }
-  p{
+  p {
     color: #878787;
     margin-bottom: 10px;
   }
-  .input,.sns,.registrateion{
+  .input,
+  .sns,
+  .registrateion {
     @include input;
     border-radius: 5px;
     width: 300px;
@@ -25,27 +27,26 @@
     padding: 20px;
     margin-bottom: 30px;
   }
-  .sns{
+  .sns {
     margin: 0 auto 10px;
     color: #fff;
     line-height: 15px;
     display: block;
-    &.mail{
-      background:#13b1c0
+    &.mail {
+      background: #13b1c0;
     }
-    &.facebook{
-      background: #4267B2;
+    &.facebook {
+      background: #4267b2;
     }
-    &.twitter{
-      background: #3AA1F2;
+    &.twitter {
+      background: #3aa1f2;
     }
   }
-  .btn{
+  .btn {
     @include btn;
     padding: 15px 50px;
     font-size: 20px;
     width: 300px;
     margin-bottom: 30px;
   }
-
 }

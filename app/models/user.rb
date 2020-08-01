@@ -20,8 +20,7 @@ class User < ApplicationRecord
   validates :firstname_kana,    presence: true, length: { maximum: 35 }
   validates :lastname_kana,     presence: true, length: { maximum: 35 }
   validates :birth_year,        presence: true
-  validates :birth_month,        presence: true
-  validates :birth_day,        presence: true
-  validates :phone_number,      presence: true, on: :registrations, uniqueness: true, format: { with: VALID_PHONE_REGEX }
-
+  validates :birth_month,       presence: true
+  validates :birth_day,         presence: true
+  validates :phone_number,      presence: true, uniqueness: true, format: { with: VALID_PHONE_REGEX }
 end

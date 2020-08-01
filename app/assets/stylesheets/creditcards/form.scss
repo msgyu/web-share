@@ -1,21 +1,18 @@
-.form{
-  &__upper{
+.form {
+  &__upper {
     margin: 0 auto;
     max-width: 343px;
-    p {
-      text-align: center;
-    }
     &__group {
       font-size: 14px;
       color: #333;
-      &:not( :first-child ){
+      &:not(:first-child) {
         margin-top: 32px;
       }
-      label{
+      label {
         font-weight: 600;
       }
-      ol{
-        display:flex;
+      ol {
+        display: flex;
         li {
           margin: 5px 8px 0 0;
         }
@@ -27,7 +24,7 @@
         margin: 0 0 0 8px;
         padding: 2px 4px;
         border-radius: 2px;
-        vertical-align:top;
+        vertical-align: top;
         &-optional {
           background-color: gray;
           color: #fff;
@@ -35,10 +32,10 @@
           margin: 0 0 0 8px;
           padding: 2px 4px;
           border-radius: 2px;
-          vertical-align:top;
+          vertical-align: top;
         }
       }
-      .input-default{
+      .input-default {
         width: 90%;
         margin: 8px 0 0;
         height: 48px;
@@ -48,7 +45,7 @@
         background: #fff;
         line-height: 1.5;
         font-size: 16px;
-        &.harf{
+        &.harf {
           width: calc(40% - 6px);
           margin: 8px 8px 0 0;
           height: 45px;
@@ -57,13 +54,13 @@
           background: #fff;
           line-height: 1.5;
           font-size: 16px;
-          &.exp{
+          &.exp {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
           }
         }
-        &-select{
+        &-select {
           width: 76px;
           margin-top: 8px;
           height: 45px;
@@ -78,10 +75,10 @@
         font-size: 16px;
         font-weight: bold;
       }
-      .attention{
+      .attention {
         margin: 8px 0 0;
       }
-      .agree{
+      .agree {
         text-align: center;
       }
       a {
@@ -91,9 +88,9 @@
       span {
         margin: 0 2px;
       }
-      .about{
+      .about {
         text-align: right;
-        &__registered{
+        &__registered {
           color: #0099e8;
           text-decoration: none;
         }
@@ -102,7 +99,7 @@
         }
         .fa-question-circle {
           color: #0099e8;
-          font-size: 1rem
+          font-size: 1rem;
         }
       }
     }
@@ -123,11 +120,11 @@
     width: 100%;
     height: 50px;
     background-color: $green;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 15px;
     cursor: pointer;
   }
-  .btn-registration{
+  .btn-registration {
     color: #fff;
     border-radius: 4px;
     width: 50%;
@@ -136,14 +133,14 @@
     text-align: center;
     margin: 0 auto;
     position: relative;
-    i{
-      font-size:20px;
+    i {
+      font-size: 20px;
       position: absolute;
-      top:13.5px;
-      left:15px;
+      top: 13.5px;
+      left: 15px;
     }
     .about__registered {
-      color: #FFFFFF;
+      color: #ffffff;
       text-decoration: none;
       position: absolute;
       top: 0;
@@ -152,20 +149,19 @@
       height: 100%;
       cursor: pointer;
     }
-    &.email{
+    &.email {
       background-color: $green;
     }
-    &.facebook{
-      background-color:#385184;
+    &.facebook {
+      background-color: #385184;
     }
-    &.google{
-      background-color:#FFFFFF;
+    &.google {
+      background-color: #ffffff;
       color: black;
-      background: #fff image-url('google.svg') 
-      no-repeat 3px top;
+      background: #fff image-url("google.svg") no-repeat 3px top;
       border: #979797 solid 1px;
     }
-    &:not( :first-child ){
+    &:not(:first-child) {
       margin-top: 16px;
     }
   }

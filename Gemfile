@@ -63,6 +63,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 
@@ -128,3 +132,4 @@ gem 'omniauth-rails_csrf_protection'
 # スクレイピング
 gem 'mechanize'
 gem 'google-api-client', '~> 0.11.1'
+gem "rack", ">= 2.2.3"
