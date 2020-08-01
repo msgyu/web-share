@@ -10,6 +10,8 @@
             %span.label ニックネーム
             %span.form-require 必須
             = f.text_field :nickname, placeholder: '例:webshare-user', class: 'input-default'
+            - if resource.errors.include?(:nickname)
+              = "#{resource.errors.full_messages_for(:nickname).first}"
           .form__upper__group
             %span.label メールアドレス
             %span.form-require 必須
