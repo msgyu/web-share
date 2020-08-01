@@ -5,7 +5,6 @@
       %h2 会員情報入力
       = form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form") do |f|
         .form__upper
-          = render "devise/shared/error_messages", resource: resource
           .form__upper__group
             %span.label ニックネーム
             %span.form-require 必須
@@ -69,24 +68,24 @@
               .select-year
                 = fa_icon 'angle-down', class: 'icon-arrow-down-birth'
                 = f.select :birth_year, [["---", ""], ["2019"], ["2018"], ["2017"],["2016"],["2015"],["2014"],["2013"],["2012"],["2011"],["2010"],["2009"],["2008"],["2007"],["2006"],["2005"],["2004"],["2003"],["2002"],["2002"],["2001"],["2000"],["1999"],["1998"],["1997"],["1996"],["1995"],["1994"],["1993"],["1992"],["1991"],["1990"],["1989"]], {}, {class: "input-default-select"}
-                - if resource.errors.include?(:birth_year)
-                  %p.error_messages
-                    = "#{resource.errors.full_messages_for(:birth_year).first}"
               %span.birthday 年
               .select-year
                 = fa_icon 'angle-down', class: 'icon-arrow-down-birth'
                 = f.select :birth_month, [["---", ""], ["1"], ["2"], ["3"],["4"],["5"],["6"],["7"],["8"],["9"],["10"],["11"],["12"]], {}, {class: "input-default-select"}
-                - if resource.errors.include?(:birth_month)
-                  %p.error_messages
-                    = "#{resource.errors.full_messages_for(:birth_month).first}"
               %span.birthday 月
               .select-year
                 = fa_icon 'angle-down', class: 'icon-arrow-down-birth'
                 = f.select :birth_day, [["---", ""], ["1"], ["2"], ["3"],["4"],["5"],["6"],["7"],["8"],["9"],["10"],["11"],["12"], ["13"], ["14"], ["15"],["16"],["17"],["18"],["19"],["20"],["21"],["22"],["23"],["24"],["25"],["26"],["27"],["28"],["29"],["30"],["31"]], {}, {class: "input-default-select"}
-                - if resource.errors.include?(:birth_day)
-                  %p.error_messages
-                    = "#{resource.errors.full_messages_for(:birth_day).first}"
               %span.birthday 日
+            - if resource.errors.include?(:birth_year)
+              %p.error_messages
+                = "#{resource.errors.full_messages_for(:birth_year).first}"
+            - if resource.errors.include?(:birth_month)
+              %p.error_messages
+                = "#{resource.errors.full_messages_for(:birth_month).first}"
+            - if resource.errors.include?(:birth_day)
+              %p.error_messages
+                = "#{resource.errors.full_messages_for(:birth_day).first}"
           .form__upper__group
             %span.label 電話番号
             %span.form-require 必須
