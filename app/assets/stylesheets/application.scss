@@ -19,19 +19,18 @@
 @import "./products/product";
 @import "./products/buy";
 @import "receipts/index";
+@import "./module/error";
 
-.row{
+.row {
   margin: 0;
 }
 
-html{
-  background: #F4F8F9;
+html {
+  background: #f4f8f9;
 }
 
-.container-fluid{
-  background: #F4F8F9;
+.container-fluid {
+  background: #f4f8f9;
   margin: 0;
   padding: 0;
 }
-
-
