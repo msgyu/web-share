@@ -16,7 +16,7 @@ describe User do
     it "is invalid without a email" do
       user.build(:user, email: nil)
       user.valid?
-      expect(user.errors[:email]).to include("を入力してください")
+      expect(user.errors[:email]).to include("不正な値です")
     end
 
     it "is invalid without a firstname" do
