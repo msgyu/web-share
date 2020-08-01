@@ -7,7 +7,13 @@
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-form__group
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'input-default-login'
+          - if resource.errors.include?(:email)
+              %p.error_messages
+                = "#{resource.errors.full_messages_for(:email).first}"
         .login-form__group
           = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class: 'input-default-login'
+          - if resource.errors.include?(:password)
+              %p.error_messages
+                = "#{resource.errors.full_messages_for(:password).first}"
         .login-form__group
           = f.submit "ログイン", class:"btn-default-login"
