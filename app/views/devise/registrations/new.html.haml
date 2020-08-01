@@ -9,11 +9,15 @@
           .form__upper__group
             %span.label ニックネーム
             %span.form-require 必須
-            = f.text_field :nickname, placeholder: '例:メルカリ太郎', class: 'input-default'
+            = f.text_field :nickname, placeholder: '例:webshare-user', class: 'input-default'
+            - if resource.errors.include?(:nickname)
+              = "#{resource.errors.full_messages_for(:nickname).first}"
           .form__upper__group
             %span.label メールアドレス
             %span.form-require 必須
             = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: 'input-default'
+            - if resource.errors.include?(:email)
+              = "#{resource.errors.full_messages_for(:email).first}"
           - unless session[:password_token].present?
             .form__upper__group
               %span.label パスワード
