@@ -18,7 +18,12 @@
         .icon_wap
           %i.fas.fa-search
   = link_to root_path, class:"logo" do
-    = "WEBSHARE"
+    = image_tag 'sample/webshare-icon.png', alt: 'header-logo', class: 'logo-image'
+    %ul.logo-ul
+      %li.logo-ul-li_sub
+        %p.logo-subtitle 影響力をシェアしよう
+      %li.logo-ul-li
+        %h1.logo-h1 WEBSHARE
 .notifications
   - flash.each do |key, value|
     = content_tag(:div, value, class: key)

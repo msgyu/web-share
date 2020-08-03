@@ -34,6 +34,31 @@
     margin-left: 10px;
     color: #13b1c0;
     margin: 0;
+    &-image {
+      float: left;
+      width: 56px;
+      height: 57px;
+    }
+    &-ul {
+      height: 63px;
+      float: left;
+      &-li {
+        height: 45px;
+        display: list-item;
+        line-height: 45px;
+        &_sub {
+          height: 18px;
+          display: list-item;
+          line-height: 18px;
+        }
+      }
+    }
+    &-h1 {
+      font-size: 32px;
+    }
+    &-subtitle {
+      font-size: 12px;
+    }
   }
 }
 
