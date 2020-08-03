@@ -1,5 +1,54 @@
 # README
 
+# デモ
+
+[web-share](http://web-share.work/)
+
+# 動作環境
+- DB:MySQ:5.6.47
+- Ruby : 2.5.1
+- Rails : 5.2.4
+- Nginx:1.15.8
+
+# インストール手順
+1. git hub よりダウンロード
+
+2. Dockerをbuildする
+
+```
+$ docker-compose build
+```
+
+3. DBの作成
+
+```
+$ docker-compose run app rake db:create
+```
+
+4. migrateの実行
+
+```
+$ docker-compose run app rake db:migrate
+```
+
+5. seedからDB情報を作成
+
+```
+$ docker-compose run app rake db:seed
+```
+
+6. コンテナの起動
+
+```
+$ docker-compose up
+```
+
+7. localhostにアクセスすると、閲覧が可能
+
+
+
+# テーブル
+
 ## usersテーブル
 
 |Column|Type|Options|
