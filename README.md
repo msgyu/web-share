@@ -1,16 +1,17 @@
-# README
-
 # デモ
+![スクリーンショット 2020-08-03 15 17 20](https://user-images.githubusercontent.com/52862370/89151692-78694200-d59c-11ea-8070-a82ef7b36eb5.png)
 
 [web-share](http://web-share.work/)
 
-# 動作環境
-- DB:MySQ:5.6.47
+
+
+## 動作環境
+- DB : MySQL:5.6.47
 - Ruby : 2.5.1
 - Rails : 5.2.4
-- Nginx:1.15.8
+- Nginx : 1.15.8
 
-# インストール手順
+## インストール手順
 1. git hub よりダウンロード
 
 2. Dockerをbuildする
