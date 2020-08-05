@@ -20,17 +20,18 @@
 @import "./products/buy";
 @import "receipts/index";
 @import "./module/error";
+@import "./lp/top";
 
 .row {
   margin: 0;
 }
 
 html {
-  background: #f4f8f9;
+  background: $background_color;
 }
 
 .container-fluid {
-  background: #f4f8f9;
+  background: $background_color;
   margin: 0;
   padding: 0;
 }

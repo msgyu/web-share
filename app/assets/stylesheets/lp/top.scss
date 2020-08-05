@@ -1,0 +1,268 @@
+.lp_wrapper {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.lp_text {
+  line-height: 1.8;
+  margin: 0;
+  width: 50%;
+  float: left;
+  padding-right: 30px;
+  @media screen and (max-width: 767px) {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    padding-right: 0;
+  }
+  h2 {
+    font-size: 30px;
+    color: #1b76be;
+    text-shadow: #fff 2px 0 2px;
+    font-weight: bold;
+    font-family: "Noto Sans JP", sans-serif;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 17px;
+    text-shadow: #fff 2px 0 2px, #fff -2px 0 2px, #fff 0 -2px 2px,
+      #fff -2px 0 2px, #fff 2px 2px 2px, #fff -2px 2px 2px, #fff 2px -2px 2px,
+      #fff -2px -2px 2px, #fff 1px 2px 2px, #fff -1px 2px 2px, #fff 1px -2px 2px,
+      #fff -1px -2px 2px, #fff 2px 1px 2px, #fff -2px 1px 2px, #fff 2px -1px 2px,
+      #fff -2px -1px 2px, #fff 1px 1px 2px, #fff -1px 1px 2px, #fff 1px -1px 2px,
+      #fff -1px -1px 2px;
+  }
+}
+.lp_image {
+  width: 50%;
+  float: left;
+  @media screen and (max-width: 767px) {
+    float: none;
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.lp-btn {
+  padding: 50px 0 0;
+  font-size: 20px;
+  text-align: center;
+  @media only screen and (max-width: 769px) {
+    padding: 20px 0 0;
+  }
+  @media only screen and (max-width: 481px) {
+    font-size: 18px;
+  }
+  .lp-btn_link {
+    transition: 0.6s linear;
+    position: relative;
+    display: block;
+    width: 90%;
+    max-width: 590px;
+    height: 80px;
+    margin: auto;
+    background: #2576be;
+    line-height: 80px;
+    color: #fff;
+  }
+}
+.main_visual {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 10%;
+}
+
+.centerbord {
+  &.blue {
+    background: linear-gradient(-117deg, #3a6cb5 0%, #1b76be 100%);
+    color: #fff;
+  }
+  @media only screen and (max-width: 769px) {
+    padding: 60px 0 50px;
+  }
+  p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h2 {
+    @media only screen and (max-width: 960px) {
+      font-size: 35px;
+    }
+    font-size: 45px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+  ul {
+    max-width: 1160px;
+    margin: auto;
+    font-size: 0;
+    text-align: center;
+    width: 98%;
+    @media only screen and (max-width: 769px) {
+      width: 90%;
+    }
+    li {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 49%;
+      max-width: 580px;
+      padding: 15px 0 15px 40px;
+      background: image_url("lp/icn-check.png") no-repeat 5px 40%;
+      background-size: auto 20px;
+      font-size: 18px;
+      @media only screen and (max-width: 960px) {
+        width: 45%;
+        font-size: 16px;
+        padding: 5px 10px 5px 40px;
+      }
+      @media only screen and (max-width: 769px) {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        padding: 5px 0 5px 40px;
+      }
+      @media only screen and (max-width: 481px) {
+        display: block;
+        width: 100%;
+      }
+      span {
+        text-align: left;
+        display: block;
+      }
+    }
+  }
+  .function_ul {
+    text-align: center;
+    list-style: none;
+    &_li {
+      list-style-type: none;
+      display: inline-block;
+      width: 18%;
+      max-width: 228px;
+      margin: 0 2px;
+      vertical-align: top;
+      background: none;
+      padding: 0;
+      @media only screen and (max-width: 769px) {
+        display: block;
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto 20px;
+      }
+      dl {
+        dt {
+          display: block;
+          padding: 30px 0;
+          background: rgba(42, 107, 198, 0.13);
+          color: #2a6bc6;
+          font-size: 22px;
+          @media only screen and (max-width: 960px) {
+            padding: 20px 0;
+            font-size: 18px;
+          }
+          @media only screen and (max-width: 769px) {
+            font-size: 40px;
+          }
+          @media only screen and (max-width: 481px) {
+            font-size: 22px;
+          }
+          span {
+            text-align: center;
+            display: block;
+            color: #09d4ff;
+            font-size: 10px;
+            @media only screen and (max-width: 769px) {
+              font-size: 16px;
+            }
+            @media only screen and (max-width: 960px) {
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .dd-fig {
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+        .dd-text {
+          height: 300px;
+          padding: 45px 0;
+          background: #272c34;
+          color: #fff;
+          overflow: hidden;
+          @media only screen and (max-width: 960px) {
+            padding: 30px 0 0;
+          }
+          @media only screen and (max-width: 769px) {
+            height: auto;
+            padding: 45px 0px;
+          }
+          &_heading {
+            margin-bottom: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            @media only screen and (max-width: 960px) {
+              margin-bottom: 30px;
+              font-size: 14px;
+            }
+            @media only screen and (max-width: 769px) {
+              font-size: 32px;
+            }
+            @media only screen and (max-width: 641px) {
+              font-size: 26px;
+            }
+            @media only screen and (max-width: 481px) {
+              font-size: 18px;
+            }
+          }
+          &_note {
+            display: block;
+            box-sizing: border-box;
+            width: 85%;
+            margin: auto;
+            padding-left: 25px;
+            margin-bottom: 5px;
+            background: image_url("lp/icn-check2.png") no-repeat 0 4px;
+            background-size: 15px auto;
+            font-size: 14px;
+            text-align: left;
+            @media only screen and (max-width: 960px) {
+              padding-left: 18px;
+              background-size: 10px auto;
+              font-size: 12px;
+            }
+            @media only screen and (max-width: 769px) {
+              padding-left: 30px;
+              background-size: 20px auto;
+              font-size: 24px;
+            }
+            @media only screen and (max-width: 641px) {
+              font-size: 20px;
+            }
+            @media only screen and (max-width: 481px) {
+              padding-left: 20px;
+              background-size: 15px auto;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

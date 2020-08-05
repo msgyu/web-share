@@ -10,6 +10,12 @@ Rails.application.routes.draw do
       get :mypage
     end
   end
+
+  resources :lp do
+    collection do
+      get :top
+    end
+  end
   
   resources :creditcards, except: :show do
     collection do

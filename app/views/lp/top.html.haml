@@ -1,0 +1,99 @@
+.header.clearfix
+  = link_to root_path, class:"logo" do
+    = image_tag 'sample/webshare-icon.png', alt: 'header-logo', class: 'logo-image'
+    %ul.logo-ul
+      %li.logo-ul-li_sub
+        %p.logo-subtitle 影響力をシェアしよう
+      %li.logo-ul-li
+        %h1.logo-h1 WEBSHARE
+.main_visual
+  .lp_wrapper.clearfix
+    .lp_text
+      %h2 コラボして登録者数をスピードアップ
+      %p コラボしたくても相手が見つからない悩みを解決。WEBSHAREではコラボ希望のユーザーが登録しているので、効率的にコラボ相手を見つけることができます。報酬の支払いも管理しているので、報酬未払いなどのリスクなく交渉することができます。
+    .lp_image
+      = image_tag "lp/top-image"
+%section.main_visual.centerbord.blue
+  .lp_wrapper
+    %p YouTubeに動画投稿されているお客様へ
+    %h2 こんな事でお困りでは御座いませんか？
+    %ul
+      %li
+        %span コラボして登録者数を増やしたいけど、相手が見つからない
+      %li
+        %span コラボの報酬がちゃんと振り込まれるか不安...
+      %li
+        %span チャンネルとマッチした相手を見つけるのに一苦労...
+      %li
+        %span チャンネル規模が小さいので企業案件できない。
+      %li
+        %span 新たな収益化を模索しているが、思いつかない
+      %li
+        %span 演者が欲しいが、相手がみつからない
+%section.main_visual.centerbord
+  .lp_wrapper
+    %p このようなお悩みはWEBSHAREで解決出来ます！
+    %h2 WEBSHAREが出来ること
+    %ul.function_ul
+      %li.function_ul_li
+        %dl
+          %dt
+            %span SEARCH
+            検索
+          -# %dd.dd-fig
+          -#   = image_tag "", alt: "機能紹介"
+          %dd.dd-text
+            %span.dd-text_heading
+              効率的にリサーチ
+            %span.dd-text_note コラボに意欲的なユーザーのみだから効率的
+            %span.dd-text_note キーワード・タグ検索
+            %span.dd-text_note チャンネル登録者数で検索結果を絞る
+      %li.function_ul_li
+        %dl
+          %dt
+            %span RECRUITMENT
+            募集
+          -# %dd.dd-fig
+          -#   = image_tag "", alt: "機能紹介"
+          %dd.dd-text
+            %span.dd-text_heading
+              共感する演者を募集
+            %span.dd-text_note 企画・条件を投稿し、応募者を集う
+            %span.dd-text_note ニーズに合った応募者を選び、時間短縮
+      %li.function_ul_li
+        %dl
+          %dt
+            %span MONETIZATION
+            収益化
+          -# %dd.dd-fig
+          -#   = image_tag "", alt: "機能紹介"
+          %dd.dd-text
+            %span.dd-text_heading
+              コラボの売買
+            %span.dd-text_note コラボ費用を設定し、販売。コラボすることで収益化
+            %span.dd-text_note 料金を支払うことでコラボ実現。登録者を伸ばす
+      %li.function_ul_li
+        %dl
+          %dt
+            %span TRANSACTION
+            安心した取引
+          -# %dd.dd-fig
+          -#   = image_tag "", alt: "機能紹介"
+          %dd.dd-text
+            %span.dd-text_heading
+              打ち合わせをサポート
+            %span.dd-text_note 国内大手のPAYJPを利用した決済。セキュリティも安心
+      %li.function_ul_li
+        %dl
+          %dt
+            %span SECRETARY
+            チャット機能
+          -# %dd.dd-fig
+          -#   = image_tag "", alt: "機能紹介"
+          %dd.dd-text
+            %span.dd-text_heading
+              打ち合わせをサポート
+            %span.dd-text_note 支払後の打ち合わせだから、安心
+            %span.dd-text_note チャットで打ち合わせ
+    .lp-btn
+      = link_to '登録する', root_path, class: "lp-btn_link"
