@@ -54,6 +54,29 @@
     }
   }
 }
+.blue-Btn_ul {
+  margin: 30px auto 0;
+  -webkit-box-pack: center;
+  &_li {
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+    overflow: hidden;
+    padding: 15px 3rem;
+    color: #ffffff;
+    border: 2px solid #1b76be;
+    border-radius: 50px;
+    background: #1b76be;
+    -webkit-box-shadow: 3.019px 2.624px 19.92px 4.08px rgba(80, 124, 159, 0.27);
+    box-shadow: 3.019px 2.624px 19.92px 4.08px rgba(80, 124, 159, 0.27);
+    @media screen and (max-width: 767px) {
+      padding: 15px 20px;
+    }
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
+  }
+}
 
 .lp-btn {
   padding: 50px 0 0;
