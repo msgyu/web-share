@@ -3,14 +3,22 @@
 # デモ
 - http://web-share.work/lp/top
 
+# 機能
+- 費用を設定して、影響力を販売（コラボ）
+- 検索機能
+- カテゴリー
+- 決済機能
+- 購入履歴機能
+- 取引メッセージ(実装予定）
+- YouTube認証（実装予定）
 
 
-## 動作環境
+# 動作環境
 - DB : MySQL:5.6.47
 - Ruby : 2.5.1
 - Rails : 5.2.4
 - Nginx : 1.15.8
-- docker-compose : version "3"
+- docker-compose : version 3
 - AWS : EC2, RDS, IAM, Route53, ELB( AWS無料枠の上限に達したため、現在ELBは停止中）
 
 
