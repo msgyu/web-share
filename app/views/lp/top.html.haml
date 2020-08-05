@@ -11,6 +11,11 @@
     .lp_text
       %h2 コラボして登録者数をスピードアップ
       %p コラボしたくても相手が見つからない悩みを解決。WEBSHAREではコラボ希望のユーザーが登録しているので、効率的にコラボ相手を見つけることができます。報酬の支払いも管理しているので、報酬未払いなどのリスクなく交渉することができます。
+      %ul.blue-Btn_ul
+        %li.blue-Btn_ul_li
+          = link_to "サイトをみる", root_path, class: "blue-Btn"
+        %li.blue-Btn_ul_li
+          = link_to "新規登録", new_user_session_path, class: "blue-Btn"
     .lp_image
       = image_tag asset_path('lp/top-image.png'), alt: 'イメージ画像'
 %section.main_visual.centerbord.blue
