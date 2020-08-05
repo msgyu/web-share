@@ -1,7 +1,7 @@
 
 ![スクリーンショット 2020-08-05 16 37 15](https://user-images.githubusercontent.com/52862370/89409621-510da300-d75d-11ea-8ea3-be4cc2a51cd6.png)
 # デモ
-[web-share](http://web-share.work/)
+[web-share](http://web-share.work/lp/top)
 
 
 
