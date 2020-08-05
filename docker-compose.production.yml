@@ -3,4 +3,4 @@ services:
   app:
     environment:
       - RAILS_ENV: production
-      - RAILS_SERVE_STATIC_FILES: true
+      - RAILS_SERVE_STATIC_FILES: "true"
