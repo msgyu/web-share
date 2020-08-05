@@ -11,6 +11,7 @@
 - Rails : 5.2.4
 - Nginx : 1.15.8
 - docker-compose : version "3"
+- AWS : EC2, RDS, IAM, Route53, ELB( AWS無料枠の上限に達したため、現在ELBは停止中）
 
 
 ## インストール手順
