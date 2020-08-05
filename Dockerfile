@@ -19,6 +19,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 RUN mkdir /webapp
 WORKDIR /webapp
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
+ENV RAILS_SERVE_STATIC_FILES=true
 
 ADD ./Gemfile /webapp/Gemfile
 ADD ./Gemfile.lock /webapp/Gemfile.lock
