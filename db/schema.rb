@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_082702) do
+ActiveRecord::Schema.define(version: 2020_08_10_224652) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2020_04_25_082702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_creditcards_on_user_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
   end
 
   create_table "product_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,6 +152,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_082702) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "creditcards", "users"
+  add_foreign_key "images", "products"
   add_foreign_key "products", "users"
   add_foreign_key "products", "users", column: "client_id"
   add_foreign_key "receipts", "products"
