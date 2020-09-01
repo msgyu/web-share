@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
 
-    config.fog_directory  = 'rails-photo-123'
+    config.fog_directory  = 'web-share-image'
     config.cache_storage = :fog
   else
     config.storage :file
