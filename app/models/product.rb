@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   has_many :sns, through: :sns_product
   has_many :sns_product
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
 
   validates :name, :description, :period, :user_id, :price, presence: true
   validates :name, length: { maximum: 40 }
