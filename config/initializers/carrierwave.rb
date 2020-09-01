@@ -12,6 +12,7 @@ CarrierWave.configure do |config|
     }
 
     config.fog_directory  = 'web-share-image'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/web-share-image'
     config.cache_storage = :fog
   else
     config.storage :file
