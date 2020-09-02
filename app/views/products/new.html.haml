@@ -5,6 +5,19 @@
       .head
         %h2 プラン情報を入力
       = form_with model: @product, class:"form" do |f|
+        .form-image
+          .form-image__title
+            %label 画像
+            .form-image__text 
+            = f.fields_for :images do |f_img|
+              .clearfix
+                %ul#previews
+                  %li.input
+                    %label.upload-label
+                      .upload-label__text
+                        クリックしてファイルをアップロード
+                        .input-area
+                          = f_img.file_field :name, class: "hidden image_upload"
         .form-container
           .form-container__name
             %label タイトル
