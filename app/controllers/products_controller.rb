@@ -77,7 +77,7 @@ class ProductsController < ApplicationController
       :description,
       :period,
       :price,
-      category_ids: []
+      category_ids: [],
       images_attributes: [:name, :id],
     )
     .merge(user_id: current_user.id)
