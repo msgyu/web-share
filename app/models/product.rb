@@ -8,12 +8,16 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
 
-  validates :name, :description, :period, :user_id, :price, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :period, presence: true
+  validates :price, presence: true
+  validates :user_id, presence: true
   validates :name, length: { maximum: 40 }
   validates :description, length: { maximum: 300 }
   validates :price,numericality: {
     only_integer: true,
-    greater_than_or_equal_to: 1000,
+    greater_than_or_equal_to: 100,
     less_than_or_equal_to: 999999,
     allow_blank: true
   }
@@ -25,4 +29,5 @@ class Product < ApplicationRecord
         errors.add(:category_ids,"選択してください")
       end
     end
+
 end
