@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+  before_action :set_product, only: [:show, :destroy, :update, :edit]
+  before_action :set_category, only: [:new,:create, :edit, :update]
   def index
   end
 
@@ -55,12 +57,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @parents = Category.where(ancestry: nil)
     @product = Product.new(product_params)
-    @parents = Category.where(ancestry: nil)
-    if @product.save
-      redirect_to user_path(current_user.id), notice:"投稿完了"
+    if @product.valid?
+      @product.save
+      redirect_to mypage_users_path, notice:"投稿完了"
     else
+      flash.now[:alert] = '失敗しました'
       render "new"
     end
   end
@@ -78,9 +80,17 @@ class ProductsController < ApplicationController
       :period,
       :price,
       category_ids: [],
-      images_attributes: [:name, :id],
+      images_attributes: [:name, :id]
     )
     .merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def set_category
+    @parents = Category.where(ancestry: nil)
   end
 
 end
