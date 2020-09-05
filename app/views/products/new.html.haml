@@ -5,11 +5,12 @@
       .head
         %h2 プラン情報を入力
       = form_with model: @product, class:"form" do |f|
+        = render "devise/shared/error_messages", resource: @product
         .form-image
           .form-image__title
             %label 画像
             .form-image__text 
-            = f.fields_for :images do |f_img|
+            = f.fields_for :images do |image|
               .clearfix
                 %ul#previews
                   %li.input
@@ -17,23 +18,32 @@
                       .upload-label__text
                         クリックしてファイルをアップロード
                         .input-area
-                          = f_img.file_field :name, class: "hidden image_upload"
+                          = image.file_field :name, class: "hidden image_upload"
         .form-container
           .form-container__name
             %label タイトル
             %span 必須
             .input-space
               = f.text_field :name, class: "input-name", placeholder: "商品名（必須 40文字まで）"
+              - if @product.errors.include?(:name)
+                %p.error_messages
+                  = "#{@product.errors.full_messages_for(:name).first}"
           .form-container__description
             %label 説明
             %span 必須
             = f.text_area :description, class: "input-description", rows: "5", cols: 40, placeholder: "プランの説明を記載（必須1000文字以内）"
+            - if @product.errors.include?(:description)
+              %p.error_messages
+                = "#{@product.errors.full_messages_for(:description).first}"
           .form-shipping__form-box__day
             %label.label コラボまでの日数
             %span 必須
             .form-select
               = fa_icon 'angle-down', class: 'icon-angle-down'
               = f.select :period, [["---", ""], ["１週間以内","7"], ["２週間以内","14"], ["１ヶ月以内","31"], ["３ヶ月以内","93"]], {}, class: "select-default"
+              - if @product.errors.include?(:period)
+                %p.error_messages
+                  = "#{@product.errors.full_messages_for(:period).first}"
           .form-details
             .form-details__form-box
               .form-details__form-box__category
@@ -42,6 +52,9 @@
                 .form-select
                   = fa_icon 'angle-down', class: 'icon-angle-down'
                   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, name: 'product[category_ids][]', class: "select-default", id: "parent-category"
+                  - if @product.errors.include?(:category_ids)
+                    %p.error_messages
+                      = "#{@product.errors.full_messages_for(:category_ids).first}"
         .form-price
           .form-price__form-box
             .form-price__form-box__price
@@ -51,6 +64,9 @@
               .price-input
                 .price-input__logo ¥
                 = f.text_field :price, class: "input-price", id: "price", placeholder: "例）300", autocomplete: "off"
+                - if @product.errors.include?(:price)
+                  %p.error_messages
+                    = "#{@product.errors.full_messages_for(:price).first}"
             .form-price__form-box__charge
               .form-price__form-box__charge__left 販売手数料 (10%)
               .form-price__form-box__charge__right -
